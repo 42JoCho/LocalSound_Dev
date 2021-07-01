@@ -48,11 +48,11 @@
             lastScrollTop = st;
         }
 
-        function selectOnChange() {
+        function selectOnChange() { /* 구 이름 selector 변경에 따라 동 이름 selector 변경을 처리하는 함수 */
             var guName = document.querySelector('.guName');
             var dongName = document.querySelector('.dongName');
             var guOption = guName.options[guName.selectedIndex].innerText;
-            $('.dongName').empty();
+            $('.dongName').empty(); /* 구 이름이 변경되면 기존에 들어가 있던 동 이름 selector 비움 */
             var dongOption = {
                 donggu: ['신암동', '신천동', '효목동', '도평동', '불로봉무동', '지저동', '동촌동', '방촌동', '해안동', '안심동', '혁신동', '공산동'],
                 bukgu: ['고성동', '칠성동', '침산동', '산격동', '대현동', '복현동', '검단동', '무태조야동', '관문동', '태전동', '구암동', '관음동', '읍내동', '동천동', '노원동', '국우동'],
@@ -90,7 +90,7 @@
                     dongOption = dongOption.dalsunggoon;
                     break;
             }
-            for (var i = 0; i < dongOption.length; i++) {
+            for (var i = 0; i < dongOption.length; i++) { /* selector 에 선택한 구에 해당하는 동을 집어넣음 */
                 var option = document.createElement('option');
                 option.innerText = dongOption[i];
                 dongName.append(option)
@@ -191,7 +191,7 @@
                 <li><a href="#home">고산동</a></li>
             </ul>
         </li>
-        <li><a href="#home">달서구</a>
+        <li><a href="#home">달서구 </a>
             <ul id="sub_menu">
                 <li><a href="#home">성당동</a></li>
                 <li><a href="#home">두류동</a></li>
@@ -228,7 +228,7 @@
 <div class="write">
     <form action="main.jsp" method="post">
         <tr>
-            <select class="guName" onchange="selectOnChange()">
+            <select class="guName" onchange="selectOnChange()"> <%-- 구 이름 selector, selectOnChange() 스크립트로 변화 처리 --%>
                 <option>동구</option>
                 <option>북구</option>
                 <option>서구</option>
