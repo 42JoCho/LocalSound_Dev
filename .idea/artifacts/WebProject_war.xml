@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="WebProject-1.0-SNAPSHOT.war">
+    <root id="archive" name="biz-1.0.0-BUILD-SNAPSHOT.war">
       <element id="artifact" artifact-name="WebProject:war exploded" />
     </root>
   </artifact>

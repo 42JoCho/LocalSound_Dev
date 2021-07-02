@@ -29,7 +29,7 @@ input.detailtitle {
 }
 
 p.title {
-    border-bottom-style: 1px solid;
+    border-bottom-style: solid black 1px;
     height: 40px;
     width: 400px;
 }

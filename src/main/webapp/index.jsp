@@ -11,5 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="main.jsp">웹페이지 상단</a>
 <a href="detail.jsp">상세글 보기</a>
+<a href="test.jsp">테스트 페이지</a>
 </body>
 </html>
