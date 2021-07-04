@@ -198,7 +198,7 @@ $(function(){
                 <input type="button" value="취소"/>
             </td>
         </tr>
-        <p> 테스 트용용 </p>
+        <p> 테스트용용!!! </p>
 </table>
 </form>
 </body>
