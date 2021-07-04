@@ -280,5 +280,6 @@
             <p>1test중 입니다 </p>
 		</form>
 	</div>
+	<p>서민기 github commit test 입니다.</p>
 </body>
 </html>
