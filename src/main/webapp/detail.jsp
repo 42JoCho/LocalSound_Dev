@@ -277,7 +277,7 @@
 			</p>
 			<p class="commentcount">댓글1</p>
 			<p class="commentlist">댓글 안녕하세요</p>
-            <p>test중 입니다 </p>
+            <p>1test중 입니다 </p>
 		</form>
 	</div>
 </body>
