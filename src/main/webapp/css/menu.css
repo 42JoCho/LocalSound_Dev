@@ -27,9 +27,15 @@ header {
 	border-color: teal;
 }
 /*로고*/
+/*화면작아지면 로고 감추기*/
+@media screen and (max-width:1500px) {
+	h1 { 
+	display: none; 
+	}
+}
 h1 {
-	position: fixed;
-	left: 20%;
+	position: relative;
+	left: 21%;
 }
 
 h1>a {
@@ -37,8 +43,14 @@ h1>a {
 	text-decoration: none;
 }
 /*로그인*/
+/*화면작아지면 로그인 감추기*/
+@media screen and (max-width:1500px) {
+	.login { 
+	display: none; 
+	}
+}
 .login {
-	position: fixed;
+	position: relative;
 	right: 21%;
 	color: teal;
 
@@ -161,12 +173,12 @@ div.content {
 	border-radius: 25px;
 }
 
-.newwrite {
+p>a.newwrite {
+	position: relative;
+	left: 20%;
+	bottom: 40px;
 	font-weight: bold;
-	position: fixed;
-	bottom:40px;
-	right: 500px;
 	color: teal;
 	text-decoration: none;
-	font-size:15pt;
+	font-size: 15pt;
 }
