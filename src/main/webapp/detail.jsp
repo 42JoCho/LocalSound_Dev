@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%    
-    //제대로 utf-8환경이 아니라 한글 깨짐 그래서 임의로 추가                                                   
-    request.setCharacterEncoding("utf-8");
-    
-    String title = request.getParameter("title");
-    String content = request.getParameter("content");
+<%
+	//제대로 utf-8환경이 아니라 한글 깨짐 그래서 임의로 추가                                                   
+request.setCharacterEncoding("utf-8");
+
+String title = request.getParameter("title");
+String content = request.getParameter("content");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href=" ${pageContext.request.contextPath}/css/detailUI.css">
-<link rel="stylesheet" href=" ${pageContext.request.contextPath}/css/menu.css">
+<link rel="stylesheet"
+	href=" ${pageContext.request.contextPath}/css/detailUI.css">
+<link rel="stylesheet"
+	href=" ${pageContext.request.contextPath}/css/menu.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
@@ -105,7 +107,7 @@
 <body>
 	<header>
 		<h1>
-		
+
 			<a href="main.jsp">local sound</a>
 		</h1>
 		<div class="search">
@@ -113,7 +115,7 @@
 			<button>검색</button>
 		</div>
 		<p class="login">
-			<a href="#home">로그인</a> / <a href="#home">회원가입</a>
+<a href="login.jsp">로그인</a> / <a href="member.jsp">회원가입</a>
 		</p>
 	</header>
 	<nav>
@@ -251,7 +253,7 @@
 				</select>
 			</tr>
 			<tr>
-				<p class="title"><%=title %></p>
+				<p class="title"><%=title%></p>
 			</tr>
 			<tr>
 				<p class="detail">
@@ -265,9 +267,9 @@
 				</p>
 			</tr>
 			<div class="con">
-			<p class="detailcontent">
-				<%=content %>
-			</p>
+				<p class="detailcontent">
+					<%=content%>
+				</p>
 			</div>
 			<p>
 				<textarea class="detailcomment" name="detailcomment"
@@ -276,8 +278,8 @@
 			</p>
 			<p class="commentcount">댓글1</p>
 			<p class="commentlist">댓글 안녕하세요</p>
-            <p>1test중 입니다 </p>
-			<p>서민기 github commit test 입니다.</p>
+			<p class="commentlist">1test중 입니다</p>
+			<p class="commentlist">서민기 github commit test 입니다.</p>
 		</form>
 	</div>
 </body>

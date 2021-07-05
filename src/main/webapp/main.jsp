@@ -57,7 +57,7 @@
 
         <button>검색</button>
     </div>
-    <p class="login"><a href="#home">로그인</a> / <a href="#home">회원가입</a></p>
+    <p class="login"><a href="login.jsp">로그인</a> / <a href="member.jsp">회원가입</a></p>
 </header>
 <nav>
     <ul id="main_menu">
