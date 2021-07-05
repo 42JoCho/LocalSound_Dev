@@ -189,7 +189,6 @@
 					<li><a href="#home">범물동</a></li>
 					<li><a href="#home">고산동</a></li>
 				</ul></li>
-			<li><a href="#home">달서구</a>
 			<li><a href="#home">달서구 </a>
 				<ul id="sub_menu">
 					<li><a href="#home">성당동</a></li>
@@ -278,8 +277,8 @@
 			<p class="commentcount">댓글1</p>
 			<p class="commentlist">댓글 안녕하세요</p>
             <p>1test중 입니다 </p>
+			<p>서민기 github commit test 입니다.</p>
 		</form>
 	</div>
-	<p>서민기 github commit test 입니다.</p>
 </body>
 </html>

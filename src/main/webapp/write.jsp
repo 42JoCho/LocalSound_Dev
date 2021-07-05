@@ -149,7 +149,6 @@ $(function(){
 					<li><a href="#home">범물동</a></li>
 					<li><a href="#home">고산동</a></li>
 				</ul></li>
-			<li><a href="#home">달서구</a>
 			<li><a href="#home">달서구 </a>
 				<ul id="sub_menu">
 					<li><a href="#home">성당동</a></li>
@@ -198,7 +197,6 @@ $(function(){
                 <input type="button" value="취소"/>
             </td>
         </tr>
-        <p> 테스트용용!!!  </p>
 </table>
 </form>
 </body>
