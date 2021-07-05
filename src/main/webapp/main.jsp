@@ -176,6 +176,7 @@
         </li>
     </ul>
 </nav>
+<div class="content">
 <table class="table table-striped" id="post_list">
     <thead>
     <tr>
@@ -230,5 +231,9 @@
     </tr>
     </tbody>
 </table>
+</div>
+<div style="position:relative">
+  <p><a class="newwrite" href="write.jsp">게시글쓰기</a></p>
+</div>
 </body>
 </html>
