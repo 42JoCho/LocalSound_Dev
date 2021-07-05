@@ -6,7 +6,6 @@ body {
 }
 
 div.write {
-    padding-top: 65px;
     width: 800px;
     height: 800px;
     color: black;
@@ -20,18 +19,14 @@ div.write {
 }
 
 /*제목*/
-input.detailtitle {
-    font-size: 20px;
-    width: 325px;
-    padding: 10px;
-    outline: none;
-    float: left;
-}
-
 p.title {
-    border-bottom-style: solid black 1px;
-    height: 40px;
-    width: 400px;
+	height: 40px;
+	width: 400px;
+	font-size: 25px;
+	width: 780px;
+	padding: 10px;
+	outline: none;
+	float: left;
 }
 
 /*작성일~목록*/
@@ -62,18 +57,21 @@ button.next {
 }
 
 
-/*글 작성*/
+/*본문보기*/
 p.detailcontent {
-    border-bottom-style: solid;
-    border-color: teal;
+	font-size: 12pt;
+	padding:20px;
+	height: auto;
 }
-
-textarea.detailcontent {
-    border: 0px solid;
-    font-size: 12pt;
-    width: 790px;
-    height: auto;
-    resize: none;
+div.con{
+	border-bottom: 1px solid teal;
+}
+/*추천버튼*/
+p > button.recom{
+	position: static;
+	height: 25px;
+	padding:0px;
+	margin: 0px;
 }
 
 /*댓글*/
