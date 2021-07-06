@@ -264,6 +264,7 @@ String content = request.getParameter("content");
 					<button>
 						<a href="main.jsp">목록</a>
 					</button>
+					<button class="before">이전글</button>
 				</p>
 			</tr>
 			<div class="con">
