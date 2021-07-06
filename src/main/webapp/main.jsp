@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/menu.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
         var didScroll;
@@ -91,8 +91,7 @@
                 <li><a href="#home">태전동</a></li>
                 <li><a href="#home">구암동</a></li>
                 <li><a href="#home">관음동</a></li>
-                <li><a href=
-                               "#home">읍내동</a></li>
+                <li><a href="#home">읍내동</a></li>
                 <li><a href="#home">동천동</a></li>
                 <li><a href="#home">노원동</a></li>
                 <li><a href="#home">국우동</a></li>
@@ -177,7 +176,7 @@
     </ul>
 </nav>
 <div class="content">
-<table class="table table-striped" id="post_list">
+<table cellpadding="18" cellspacing="0">
     <thead>
     <tr>
         <th>번호</th>
@@ -196,7 +195,7 @@
         <td>mingiSeo</td>
         <td>2021-07-02</td>
         <td>12</td>
-    </tr>
+
     <tr>
         <td>2</td>
         <td>동구 신암동</td>
@@ -224,11 +223,116 @@
     <tr>
         <td>5</td>
         <td>김성동</td>
-        <td>김성동</td>
-        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나ㅏ</td>
         <td>2021-04-02</td>
         <td>123</td>
     </tr>
+    <tr>
+        <td>6</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나ㅏ</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나ㅏ</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나ㅏ</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나ㅏㅏ</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나ㅏ</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>김성동</td>
+        <td>제목임</td>
+        <td>나나</td>
+        <td>2021-04-02</td>
+        <td>123</td>
+    </tr>
+
     </tbody>
 </table>
 </div>
