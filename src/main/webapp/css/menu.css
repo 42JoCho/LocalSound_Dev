@@ -188,3 +188,9 @@ p>a.newwrite {
 	background-color:rgb(255,255,255);
 	border:0.5px solid rgb(200,200,200);
 }
+div.content > img{
+	display: block; 
+	margin: 0px auto;  
+	width: 600px;
+	height: 200px;
+}

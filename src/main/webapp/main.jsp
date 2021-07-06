@@ -178,6 +178,7 @@
 <div class="content">
 <table cellpadding="18" cellspacing="0">
     <thead>
+    <img src="${pageContext.request.contextPath}/image/deagu.png" alt="daegu logo">
     <tr>
         <th>번호</th>
         <th>지역명</th>
