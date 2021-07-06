@@ -257,15 +257,10 @@ String detailcomment = request.getParameter("detailcomment");
 				<p class="title"><%=title%></p>
 			</tr>
 			<tr>
-				<p class="detail">
+				<p class="content">
 					<td class="name">작성자</td>
 					<td class="day">작성일</td>
 					<td class="count">조회수</td>
-					<button class="next">다음글</button>
-					<button>
-						<a href="main.jsp">목록</a>
-					</button>
-					<button class="before">이전글</button>
 				</p>
 			</tr>
 			<div class="con">
@@ -273,6 +268,15 @@ String detailcomment = request.getParameter("detailcomment");
 					<%=content%>
 				</p>
 			</div>
+			<tr>
+				<p class="detail">
+					<button>
+						<a href="main.jsp">목록</a>
+					</button>
+					<button class="next">글 수정</button>
+					<button class="before">글 삭제</button>
+				</p>
+			</tr>
 		</form>
 			<p>
 			<form id="frm" action="detail.jsp" method="post">
