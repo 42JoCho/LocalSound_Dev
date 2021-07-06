@@ -6,6 +6,7 @@ request.setCharacterEncoding("utf-8");
 
 String title = request.getParameter("title");
 String content = request.getParameter("content");
+String detailcomment = request.getParameter("detailcomment");
 %>
 <!DOCTYPE html>
 <html>
@@ -271,16 +272,17 @@ String content = request.getParameter("content");
 					<%=content%>
 				</p>
 			</div>
+		</form>
 			<p>
+			<form id="frm" action="detail.jsp" method="post">
 				<textarea class="detailcomment" name="detailcomment"
 					placeholder="댓글을 입력하세요" cols="40" rows="10"></textarea>
 				<button class="comment">등록</button>
+			</form>
 			</p>
 			<p class="commentcount">댓글1</p>
-			<p class="commentlist">댓글 안녕하세요</p>
-			<p class="commentlist">1test중 입니다</p>
-			<p class="commentlist">서민기 github commit test 입니다.</p>
-		</form>
+			<p class="commentlist"><%=detailcomment%></p>
+
 	</div>
 </body>
 </html>
