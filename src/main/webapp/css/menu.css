@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
+	min-width:500px;
+	 _width: expression( document.body.clientWidth > 500 ? "500px" : "auto" );
 	padding-top: 65px;
 	background-color: rgb(250, 250, 250);
 }
@@ -29,10 +31,11 @@ header {
 /*로고*/
 /*화면작아지면 로고 감추기*/
 @media screen and (max-width:1500px) {
-	h1 { 
-	display: none; 
+	h1 {
+		display: none;
 	}
 }
+
 h1 {
 	position: relative;
 	left: 21%;
@@ -45,15 +48,15 @@ h1>a {
 /*로그인*/
 /*화면작아지면 로그인 감추기*/
 @media screen and (max-width:1500px) {
-	.login { 
-	display: none; 
+	.login {
+		display: none;
 	}
 }
+
 .login {
 	position: relative;
 	right: 21%;
 	color: teal;
-
 }
 
 .login>a {
@@ -162,6 +165,7 @@ nav {
 }
 /*게시글 목록*/
 div.content {
+	min-width:500px;
 	width: 60%;
 	color: black;
 	margin: 50px auto;
@@ -176,9 +180,11 @@ div.content {
 p>a.newwrite {
 	position: relative;
 	left: 20%;
-	bottom: 40px;
+	padding:10px;
+	bottom: 20px;
 	font-weight: bold;
-	color: teal;
 	text-decoration: none;
-	font-size: 15pt;
+	font-size: 10pt;
+	background-color:rgb(255,255,255);
+	border:0.5px solid rgb(200,200,200);
 }
