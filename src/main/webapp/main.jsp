@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/menu.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -51,7 +50,7 @@
 </head>
 <body>
 <header>
-    <h1><a href="main.jsp">local sound</a></h1>
+    <h1><a href="main.jsp">방방곡곡</a></h1>
     <div class="search">
         <input type="text" placeholder="검색어 입력">
 
@@ -126,6 +125,7 @@
             </ul>
         </li>
         <li><a href="#home">수성구</a>
+        
             <ul id="sub_menu">
                 <li><a href="#home">범어동</a></li>
                 <li><a href="#home">만촌동</a></li>

@@ -1,8 +1,20 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
+@font-face {
+    font-family: 'WandohopeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
+	font-family: 'NEXON Lv1 Gothic OTF';
 	min-width:500px;
 	 _width: expression( document.body.clientWidth > 500 ? "500px" : "auto" );
 	padding-top: 65px;
@@ -10,7 +22,7 @@ body {
 }
 /*상단*/
 header {
-	font-family: 'Roboto', serif;
+    font-family: 'WandohopeB';
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -27,6 +39,7 @@ header {
 	border-bottom-style: solid;
 	border-width: 1px;
 	border-color: teal;
+	font-size:15pt;
 }
 /*로고*/
 /*화면작아지면 로고 감추기*/
@@ -54,8 +67,10 @@ h1>a {
 }
 
 .login {
+	font-family: 'NEXON Lv1 Gothic OTF';
+	font-size:13pt;
 	position: relative;
-	right: 21%;
+	right: 23%;
 	color: teal;
 }
 
@@ -122,18 +137,18 @@ nav {
 
 #main_menu>li {
 	display: inline-block;
-	font-weight: 500;
 }
 
 #main_menu>li>a {
 	font-weight: bold;
-	font-size: 13pt;
+	font-size: 15pt;
 	color: teal;
 	text-align: center;
 	text-decoration: none;
 	letter-spacing: 0.05em;
 	display: block;
 	padding: 12px 36px;
+
 }
 /*보조 메뉴*/
 #sub_menu {
