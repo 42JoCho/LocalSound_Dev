@@ -337,7 +337,7 @@
 </table>
 </div>
 <div style="position:relative">
-  <p><a class="newwrite" href="write.jsp">게시글쓰기</a></p>
+  <p><a class="newwrite" href="write.jsp">쓰기</a></p>
 </div>
 </body>
 </html>
