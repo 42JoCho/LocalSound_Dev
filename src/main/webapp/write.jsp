@@ -22,6 +22,30 @@ table {
 	top: 0;
 	border-radius: 25px;
 }
+table td.title{
+	border-bottom: 0.5px solid;
+	border-color: rgb(220, 220, 220);
+}
+#save{
+	float:right;
+	margin:5px;
+	border:0.5px solid rgb(200,200,200);
+	background-color:rgb(255,255,255);
+	font-size:10pt;
+	width: 60px;
+	height: 40px;
+	font-weight: bold;
+}
+.del{
+	float:left;
+	margin:5px;
+	border:0.5px solid rgb(200,200,200);
+	background-color:rgb(255,255,255);
+	font-size:10pt;
+	width: 60px;
+	height: 40px;
+	font-weight: bold;
+}
 </style>
 <script type="text/javascript" src="<%=ctx%>/SE2/js/HuskyEZCreator.js"
 	charset="utf-8"></script>
@@ -186,16 +210,16 @@ table {
 	<form id="frm" action="detail.jsp" method="post">
 		<table width="100%">
 			<tr>
-				<td><input type="text" id="title" name="title"
+				<td class="title"><input type="text" id="title" name="title"
 					placeholder="제목을 입력하세요" style="width: 650px" /></td>
 			</tr>
 			<tr>
 				<td><textarea rows="10" cols="30" id="ir1" name="content"
 						style="width: 650px; height: 350px;"></textarea></td>
 			</tr>
-			<tr class="save">
-				<td colspan="2"><input type="button" id="save" value="저장" /> <input
-					type="button" value="취소" /></td>
+			<tr>
+				<td colspan="2"><input class="del" type="button" value="취소" />
+				<input type="button" id="save" value="등록" /> </td>
 			</tr>
 		</table>
 	</form>
