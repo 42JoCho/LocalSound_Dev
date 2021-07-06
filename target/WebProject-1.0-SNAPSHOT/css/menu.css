@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	padding-top: 65px;
+	background-color: rgb(250, 250, 250);
+}
+/*상단*/
+header {
+	font-family: 'Roboto', serif;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	width: 100%;
+	margin: 0;
+	padding: 1rem;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: teal;
+}
+/*로고*/
+h1 {
+	position: fixed;
+	left: 20%;
+}
+
+h1>a {
+	color: teal;
+	text-decoration: none;
+}
+/*로그인*/
+.login {
+	position: fixed;
+	right: 21%;
+	color: teal;
+
+}
+
+.login>a {
+	color: teal;
+	font-weight: bold;
+	text-decoration: none;
+}
+/*검색창*/
+.search {
+	position: fixed;
+	right: 40%;
+	height: 40px;
+	width: 400px;
+	border: 2px solid;
+	border-color: teal;
+	background: #ffffff;
+}
+
+input {
+	font-size: 16px;
+	width: 325px;
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+}
+
+button {
+	width: 50px;
+	height: 100%;
+	border: 0px;
+	background-color: teal;
+	outline: none;
+	float: right;
+	color: rgb(250, 250, 250);
+}
+/*메인 메뉴*/
+.nav-up {
+	top: -40px;
+}
+
+nav {
+	position: fixed;
+	top: 70px;
+	transition: top 0.2s ease-in-out;
+	border-bottom-style: outset;
+	width: 100%;
+	right: 0;
+	background: white;
+	border-bottom-style: solid;
+	border-color: teal;
+	border-width: 1px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#main_menu {
+	top: 100px;
+	list-style-type: none;
+	margin: 0;
+}
+
+#main_menu>li {
+	display: inline-block;
+	font-weight: 500;
+}
+
+#main_menu>li>a {
+	font-weight: bold;
+	font-size: 13pt;
+	color: teal;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	display: block;
+	padding: 12px 36px;
+}
+/*보조 메뉴*/
+#sub_menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	position: absolute;
+	background: rgb(250, 250, 250);
+	opacity: 0;
+	visibility: hidden;
+}
+
+#sub_menu>li {
+	float: left;
+	padding: 6px 18px;
+	border-style: solid;
+	border-color: teal;
+	border-width: 1px;
+}
+
+#sub_menu>li>a {
+	color: teal;
+	text-decoration: none;
+}
+
+#main_menu>li:hover #sub_menu {
+	opacity: 1;
+	visibility: visible;
+}
+/*게시글 목록*/
+div.content {
+	width: 60%;
+	color: black;
+	margin: 50px auto;
+	font-size: 13pt;
+	background-color: rgb(255, 255, 255);
+	border: 0.5px solid rgb(233, 233, 233);
+	padding: 10px;
+	top: 0;
+	border-radius: 25px;
+}
+
+.newwrite {
+	font-weight: bold;
+	position: fixed;
+	bottom:40px;
+	right: 500px;
+	color: teal;
+	text-decoration: none;
+	font-size:15pt;
+}

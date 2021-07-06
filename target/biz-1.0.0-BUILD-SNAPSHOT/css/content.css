@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*메인페이지 본문*/
+table {
+	text-align: center;
+}
+
+table th {
+	border-bottom: solid;
+	border-color: rgb(200, 200, 200);
+}
+
+table td {
+	border-bottom: 0.5px solid;
+	border-color: rgb(220, 220, 220);
+}
+
+td:nth-child(1) {
+	width: 80px;
+}
+
+td:nth-child(2) {
+	width: 200px;
+}
+
+td:nth-child(3) {
+	text-align: left;
+	width: 400px;
+}
