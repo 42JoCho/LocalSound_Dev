@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+	font-family: 'WandohopeB';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NEXON Lv1 Gothic OTF';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'NEXON Lv1 Gothic OTF';
+	min-width: 1000px; _width : expression( document.body.clientWidth > 
+	1000 ? "1000px" : "auto");
+	padding-top: 65px;
+	background-color: rgb(250, 250, 250);
+	_width: expression(document.body.clientWidth > 1000 ? "1000px" : "auto");
+}
+/*상단*/
+header {
+	font-family: 'WandohopeB';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	width: 100%;
+	margin: 0;
+	padding: 1rem;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: teal;
+	font-size: 15pt;
+}
+/*로고*/
+/*화면작아지면 로고 감추기*/
+@media screen and (max-width:1500px) {
+	h1 {
+		display: none;
+	}
+}
+
+h1 {
+	position: relative;
+	left: 21%;
+}
+
+h1>a {
+	color: teal;
+	text-decoration: none;
+}
+/*로그인*/
+/*화면작아지면 로그인 감추기*/
+@media screen and (max-width:1500px) {
+	.login {
+		display: none;
+	}
+}
+
+.login {
+	font-family: 'NEXON Lv1 Gothic OTF';
+	font-size: 13pt;
+	position: relative;
+	right: 23%;
+	color: teal;
+}
+
+.login>a {
+	color: teal;
+	font-weight: bold;
+	text-decoration: none;
+}
+/*검색창*/
+.search {
+	position: fixed;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	height: 40px;
+	width: 400px;
+	border: 2px solid;
+	border-color: teal;
+	background: #ffffff;
+}
+
+input {
+	font-size: 16px;
+	width: 325px;
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+}
+
+button {
+	width: 50px;
+	height: 100%;
+	border: 0px;
+	background-color: teal;
+	outline: none;
+	float: right;
+	color: rgb(250, 250, 250);
+}
+/*메인 메뉴*/
+.nav-up {
+	top: -40px;
+}
+
+nav {
+	position: fixed;
+	top: 70px;
+	transition: top 0.2s ease-in-out;
+	border-bottom-style: outset;
+	width: 100%;
+	right: 0;
+	background: white;
+	border-bottom-style: solid;
+	border-color: teal;
+	border-width: 1px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#main_menu {
+	top: 100px;
+	list-style-type: none;
+	margin: 0;
+}
+
+#main_menu>li {
+	display: inline-block;
+}
+
+#main_menu>li>a {
+	font-weight: bold;
+	font-size: 15pt;
+	color: teal;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	display: block;
+	padding: 12px 36px;
+}
+/*보조 메뉴*/
+#sub_menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	position: absolute;
+	background: rgb(250, 250, 250);
+	opacity: 0;
+	visibility: hidden;
+	width:auto;
+}
+
+#sub_menu>li {
+	float: left;
+	padding: 6px 18px;
+	border-style: solid;
+	border-color: teal;
+	border-width: 1px;
+}
+
+#sub_menu>li>a {
+	color: teal;
+	text-decoration: none;
+}
+
+#main_menu>li:hover #sub_menu {
+	opacity: 1;
+	visibility: visible;
+}
+/*게시글 목록*/
+div.content {
+	width: 1130px;
+	color: black;
+	margin: 50px auto;
+	font-size: 13pt;
+	background-color: rgb(255, 255, 255);
+	border: 0.5px solid rgb(233, 233, 233);
+	padding: 10px;
+	top: 0;
+	border-radius: 25px;
+}
+
+p>a.newwrite {
+	position: relative;
+	left: 20%;
+	padding: 10px;
+	bottom: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 10pt;
+	background-color: rgb(255, 255, 255);
+	border: 0.5px solid rgb(200, 200, 200);
+}
+
+div.content>img {
+	display: block;
+	margin: 0px auto;
+	width: 600px;
+	height: 200px;
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
