@@ -1,7 +1,5 @@
 package com.bbgg_dev.sign_up;
 
-import com.bbgg_dev.sign_up.SignUpService;
-import com.bbgg_dev.sign_up.SignUpVO;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 

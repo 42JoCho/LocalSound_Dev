@@ -1,4 +1,5 @@
 package com.bbgg_dev.login;
 
-public class LoginService {
+public interface LoginService {
+    public LoginVO checkLogin(LoginVO vo);
 }
