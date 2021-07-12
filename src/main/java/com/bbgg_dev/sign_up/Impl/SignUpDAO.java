@@ -62,8 +62,8 @@ public class SignUpDAO {
             stmt = conn.prepareStatement(FIND_ID);
             stmt.setString(1, email);
             rs = stmt.executeQuery();
-            if(rs.next())
-            id = rs.getString(1);
+            if (rs.next())
+                id = rs.getString(1);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -79,8 +79,8 @@ public class SignUpDAO {
             stmt = conn.prepareStatement(FIND_PASSWORD);
             stmt.setString(1, id);
             rs = stmt.executeQuery();
-            if(rs.next())
-            pw = rs.getString(1);
+            if (rs.next())
+                pw = rs.getString(1);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -97,7 +97,7 @@ public class SignUpDAO {
             stmt = conn.prepareStatement(ID_CHECK);
             stmt.setString(1, id);
             rs = stmt.executeQuery();
-            if(rs.next()) {
+            if (rs.next()) {
                 if (rs.getInt("count") != 0) {
                     isduplicated = true;
                 }

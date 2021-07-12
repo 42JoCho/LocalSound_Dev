@@ -16,8 +16,8 @@ public class LoginServiceClient {
         vo.setMemberPassword("1234");
 
         LoginVO user = loginService.checkLogin(vo);
-        if(user!=null)
-            System.out.println(user.getMemberName()+" 님 로그인 성공!");
+        if (user != null)
+            System.out.println(user.getMemberName() + " 님 로그인 성공!");
         else
             System.out.println("로그인 실패!");
 
