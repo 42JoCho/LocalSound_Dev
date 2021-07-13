@@ -92,6 +92,7 @@ public class CommentDAO {
         try {
             conn = JDBCUtil.getConnection();
             stmt = conn.prepareStatement(getCommentList);
+            stmt.setInt(1, vo.getPostId());
             rs = stmt.executeQuery();
             while (rs.next()) {
                 comment = getCommentVO();
