@@ -13,7 +13,6 @@ public class PostServiceImpl implements PostService {
     @Autowired
     private PostDAO postDAO;
 
-
     @Override
     public void insertPost(PostVO vo) {
         postDAO.insertPost(vo);

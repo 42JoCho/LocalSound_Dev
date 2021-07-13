@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+// 검색 기능 백엔드 작업할것.
 
 @Repository("postDAO")
 public class PostDAO {
@@ -81,14 +84,7 @@ public class PostDAO {
             rs = stmt.executeQuery();
             if (rs.next()) {
                 post = new PostVO();
-                post.setPostId(rs.getInt("PID"));
-                post.setPostTitle(rs.getString("TITLE"));
-                post.setPostAuthor(rs.getString("AUTHOR"));
-                post.setPostDate(rs.getDate("PDATE"));
-                post.setPostViewCount(rs.getInt("VIEWCOUNT"));
-                post.setPostText(rs.getString("PMAIN_TEXT"));
-                post.setGuName(rs.getString("GU_NAME"));
-                post.setDongName(rs.getString("DONG_NAME"));
+                getPostVO(post);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,14 +103,7 @@ public class PostDAO {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 PostVO post = new PostVO();
-                post.setPostId(rs.getInt("PID"));
-                post.setPostTitle(rs.getString("TITLE"));
-                post.setPostAuthor(rs.getString("AUTHOR"));
-                post.setPostDate(rs.getDate("PDATE"));
-                post.setPostViewCount(rs.getInt("VIEWCOUNT"));
-                post.setPostText(rs.getString("PMAIN_TEXT"));
-                post.setGuName(rs.getString("GU_NAME"));
-                post.setDongName(rs.getString("DONG_NAME"));
+                getPostVO(post);
                 postList.add(post);
             }
         } catch (Exception e) {
@@ -123,5 +112,16 @@ public class PostDAO {
             JDBCUtil.close(rs, stmt, conn);
         }
         return postList;
+    }
+
+    private void getPostVO(PostVO post) throws SQLException {
+        post.setPostId(rs.getInt("PID"));
+        post.setPostTitle(rs.getString("TITLE"));
+        post.setPostAuthor(rs.getString("AUTHOR"));
+        post.setPostDate(rs.getDate("PDATE"));
+        post.setPostViewCount(rs.getInt("VIEWCOUNT"));
+        post.setPostText(rs.getString("PMAIN_TEXT"));
+        post.setGuName(rs.getString("GU_NAME"));
+        post.setDongName(rs.getString("DONG_NAME"));
     }
 }
