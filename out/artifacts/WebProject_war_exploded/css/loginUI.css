@@ -1,41 +1,44 @@
 @font-face {
-	font-family: 'WandohopeB';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'WandohopeB';
+    src:
+            url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff')
+            format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'NEXON Lv1 Gothic OTF';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src:
+            url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
+            format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body{
-	font-family: 'NEXON Lv1 Gothic OTF';
+    font-family: 'NEXON Lv1 Gothic OTF';
     display: flex;
     flex-direction: column;
     align-items: center;
-   	background-color: rgb(250, 250, 250);
+    background-color: rgb(250, 250, 250);
 }
 
 .logo{
-	font-family: 'WandohopeB';
-    
-   font-size: 58px; 
+    font-family: 'WandohopeB';
+
+    font-size: 58px;
 }
-   
+
 .logo > .title{
-	color: teal;
+    color: teal;
 }
 
-
+form{
+    text-align: center;
+}
 .login{
+    right:10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,13 +55,13 @@ body{
 .login_button{
     width: 470px;
     height: 60px;
-	border: 0px;
-	background-color: teal;
-	outline: none;
-	float: right;
-	color: rgb(250, 250, 250);
-	margin: 15px;
-	font-size:15pt;
+    border: 0px;
+    background-color: teal;
+    outline: none;
+    float: right;
+    color: rgb(250, 250, 250);
+    margin: 15px;
+    font-size:15pt;
 }
 
 .login_option{
@@ -121,7 +124,7 @@ body{
 a{
     text-decoration: none;
     color: #828282;
-    
+
 }
 
 a:visited{
