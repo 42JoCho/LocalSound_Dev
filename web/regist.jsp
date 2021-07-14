@@ -33,7 +33,7 @@
 <body>
 <!-- header -->
 <div id="header">
-    <a href="SignUpVO.java" title="홈으로 돌아가기"><img src="image/logo.png" id="logo"></a>
+    <a href="main.jsp" title="홈으로 돌아가기"><img src="image/logo.png" id="logo"></a>
 </div>
 <!-- wrapper -->
 <div id="wrapper">

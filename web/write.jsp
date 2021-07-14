@@ -36,18 +36,16 @@
 			font-size: 10pt;
 			width: 60px;
 			height: 40px;
-			font-weight: bold;
 		}
-
-		.del {
-			float: left;
+		button.del {
+			float: right;
 			margin: 5px;
 			border: 0.5px solid rgb(200, 200, 200);
 			background-color: rgb(255, 255, 255);
 			font-size: 10pt;
 			width: 60px;
 			height: 40px;
-			font-weight: bold;
+			color:black;
 		}
 	</style>
 	<script type="text/javascript" src="<%=ctx%>/SE2/js/HuskyEZCreator.js"
@@ -327,7 +325,7 @@
 			<option>공산동</option>
 		</select>
 	</tr>
-	<form id="frm" action="detail.jsp" method="post">
+	<form id="frm" action="main.jsp" method="post">
 		<table width="100%">
 			<tr>
 				<td class="title"><input type="text" id="title" name="title"
@@ -338,11 +336,14 @@
 							  style="width: 650px; height: 350px;"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input class="del" type="button" value="취소" />
-					<input type="button" id="save" value="등록" /></td>
-			</tr>
-		</table>
+				<td colspan="2"><input type="button" class="del" id="save" value="등록" />
 	</form>
+
+					<form action="main.jsp" method="post">
+						<button class="del">취소</button>
+					</form>
+					</td>
+			</tr>
 </div>
 </body>
 </html>

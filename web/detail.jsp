@@ -215,11 +215,11 @@
 	<div>
 		<p class="title"><%=rs.getNString("TITLE")%></p>
 	</div>
-	<div>
+	<div class= "pdate">
 		<tr>
-			<td class="name"><%=rs.getNString("AUTHOR")%></td>
-			<td class="day"><%=rs.getTimestamp("PDATE")%></td>
-			<td class="count"><%=rs.getInt("VIEWCOUNT")%></td>
+			<td class="name"><span>작성자</span>    <%=rs.getNString("AUTHOR")%></td>
+			<td class="day"><span>작성일</span>    <%=rs.getTimestamp("PDATE")%></td>
+			<td class="count"><span>조회수</span>    <%=rs.getInt("VIEWCOUNT")%></td>
 		</tr>
 	</div>
 	<div class="detailcontent">
@@ -233,12 +233,12 @@
 				</form>
 			</td>
 			<td>
-				<form action="main.jsp" method="post">
+				<form action="write.jsp" method="post">
 					<button class="next">수정</button>
 				</form>
 			</td>
 			<td>
-				<form action="main.jsp" method="post">
+				<form action="login.jsp" method="post">
 					<button class="next">삭제</button>
 				</form>
 			</td>
@@ -254,8 +254,12 @@
 	<div>
 		<p class="commentcount">댓글1</p>
 		<p class="commentlist">
+			<% while (rs.next()) { %>
+
+
 			<button class="commentedit">수정</button>
 			<button class="commentdel">삭제</button>
+			<% } %>
 		</p>
 	</div>
 </div>
