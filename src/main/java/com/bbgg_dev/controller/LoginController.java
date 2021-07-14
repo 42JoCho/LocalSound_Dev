@@ -1,4 +1,30 @@
 package com.bbgg_dev.controller;
 
-public class LoginController {
+import com.bbgg_dev.login.Impl.LoginDAO;
+import com.bbgg_dev.login.LoginVO;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginController implements Controller {
+    @Override
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("로그인 처리");
+
+        String id = request.getParameter("id");
+        String pw = request.getParameter("pw");
+
+        LoginVO vo = new LoginVO();
+        vo.setMemberId(id);
+        vo.setMemberPassword(pw);
+
+        LoginDAO loginDAO = new LoginDAO();
+        LoginVO user = loginDAO.checkUser(vo);
+
+        if (user != null) {
+            return "post.do";
+        }else{
+            return "login";
+        }
+    }
 }
