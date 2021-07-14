@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentMapper">
+
+    <!-- 댓글 조회 -->
+    <select id="readComment" resultType="com.bbgg_dev.comment.CommentVO">
+        SELECT
+            AUTHOR, CDATE, CMAIN_TEXT
+        FROM mysql.comment
+        WHERE PID = #{PID}
+    </select>
+
+</mapper>
