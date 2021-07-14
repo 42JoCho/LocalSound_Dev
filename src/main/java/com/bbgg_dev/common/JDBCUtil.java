@@ -6,7 +6,7 @@ public class JDBCUtil {
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost/book_db", "root", "tjdehd450");
+            return DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "1234");
 
 
         }catch (Exception e) {
