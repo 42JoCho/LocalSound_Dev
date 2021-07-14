@@ -5,8 +5,8 @@
 @font-face {
 	font-family: 'WandohopeB';
 	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff')
-		format('woff');
+			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff')
+			format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -14,8 +14,8 @@
 @font-face {
 	font-family: 'NEXON Lv1 Gothic OTF';
 	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
-		format('woff');
+			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
+			format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -24,7 +24,7 @@ body {
 	font-family: 'NEXON Lv1 Gothic OTF';
 	min-width: 1000px; _width : expression( document.body.clientWidth > 
 	1000 ? "1000px" : "auto");
-	padding-top: 65px;
+	padding-top: 75px;
 	background-color: rgb(250, 250, 250);
 	_width: expression(document.body.clientWidth > 1000 ? "1000px" : "auto");
 }
@@ -35,7 +35,7 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 40px;
+	height: 50px;
 	width: 100%;
 	margin: 0;
 	padding: 1rem;
@@ -44,8 +44,8 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	z-index: 1;
-	border-bottom-style: solid;
-	border-width: 1px;
+	border-bottom-style: none;
+	border-width: 0.5px;
 	border-color: teal;
 	font-size: 15pt;
 }
@@ -89,6 +89,7 @@ h1>a {
 }
 /*검색창*/
 .search {
+	box-shadow: 0px 0px 3px rgb(200,200,200);
 	position: fixed;
 	margin: 0 auto;
 	left: 0;
@@ -125,15 +126,15 @@ button {
 
 nav {
 	position: fixed;
-	top: 70px;
-	transition: top 0.2s ease-in-out;
+	top: 80px;
+	transition: top 0.3s ease-in-out;
 	border-bottom-style: outset;
 	width: 100%;
 	right: 0;
 	background: white;
 	border-bottom-style: solid;
 	border-color: teal;
-	border-width: 1px;
+	border-width: 0.5px;
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -220,7 +221,7 @@ div.content>img {
 	height: 200px;
 }
 .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
+	background-color: #f1f1f1;
+	padding: 10px;
+	text-align: center;
 }

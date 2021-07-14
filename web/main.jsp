@@ -1,25 +1,46 @@
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+         pageEncoding="UTF-8"%>
+<%
+    String url = "jdbc:mysql://localhost/mysql";
+    String id = "root";
+    String password = "tjdehd450";
+    String sql = "SELECT * FROM post";
+
+    Class.forName("com.mysql.jdbc.Driver");
+
+    // 2단계 데이터베이스 접속
+    Connection conn = DriverManager.getConnection(url, id, password);
+    System.out.println("데이터베이스 접속 성공");
+    // SQL 문장 객체 생성 및 설정
+    Statement stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery(sql);
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/menu.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/css/menu.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/css/content.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
         var didScroll;
         var lastScrollTop = 0;
         var delta = 5;
         var navbarHeight = $('nav').outerHeight();
 
-        $(window).scroll(function (event) {
+        $(window).scroll(function(event) {
             didScroll = true;
         });
 
-        setInterval(function () {
+        setInterval(function() {
             if (didScroll) {
                 hasScrolled();
                 didScroll = false;
@@ -46,18 +67,40 @@
             }
             lastScrollTop = st;
         }
-
     </script>
 </head>
 <body>
 <header>
-    <h1><a href="main.jsp">방방곡곡</a></h1>
+    <h1>
+        <a href="main.jsp">방방곡곡</a>
+    </h1>
     <div class="search">
         <input type="text" placeholder="검색어 입력">
-
         <button>검색</button>
     </div>
-    <p class="login"><a href="login.jsp">로그인</a> / <a href="regist.jsp">회원가입</a></p>
+
+    <p class="login">
+        <a id="login" href="login.jsp">로그인</a> /
+        <script>
+            var id = '${sessionID}';
+            if (id == '') {
+                return false;
+            } else {
+                var str = document.getElementById("login");
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
+            }
+        </script>
+        <a id="regist" href="regist.jsp">회원가입</a>
+        <script>
+            var id = '${sessionID}';
+            if (id == '') {
+                return false;
+            } else {
+                var str = document.getElementById("regist");
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="index.jsp">내 정보</a>';
+            }
+        </script>
+    </p>
 </header>
 <nav>
     <ul id="main_menu">
@@ -75,8 +118,7 @@
                 <li><a href="#home">안심동</a></li>
                 <li><a href="#home">혁신동</a></li>
                 <li><a href="#home">공산동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">북구</a>
             <ul id="sub_menu">
                 <li><a href="#home">고성동</a></li>
@@ -95,8 +137,7 @@
                 <li><a href="#home">동천동</a></li>
                 <li><a href="#home">노원동</a></li>
                 <li><a href="#home">국우동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">서구</a>
             <ul id="sub_menu">
                 <li><a href="#home">내당동</a></li>
@@ -104,8 +145,7 @@
                 <li><a href="#home">평리동</a></li>
                 <li><a href="#home">상중이동</a></li>
                 <li><a href="#home">원대동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">중구</a>
             <ul id="sub_menu">
                 <li><a href="#home">동인동</a></li>
@@ -114,15 +154,13 @@
                 <li><a href="#home">대신동</a></li>
                 <li><a href="#home">남산동</a></li>
                 <li><a href="#home">대봉동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">남구</a>
             <ul id="sub_menu">
                 <li><a href="#home">이천동</a></li>
                 <li><a href="#home">봉덕동</a></li>
                 <li><a href="#home">대명동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">수성구</a>
             <ul id="sub_menu">
                 <li><a href="#home">범어동</a></li>
@@ -136,8 +174,7 @@
                 <li><a href="#home">지산동</a></li>
                 <li><a href="#home">범물동</a></li>
                 <li><a href="#home">고산동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">달서구</a>
             <ul id="sub_menu">
                 <li><a href="#home">성당동</a></li>
@@ -155,8 +192,7 @@
                 <li><a href="#home">도원동</a></li>
                 <li><a href="#home">송현동</a></li>
                 <li><a href="#home">본동</a></li>
-            </ul>
-        </li>
+            </ul></li>
         <li><a href="#home">달성군</a>
             <ul id="sub_menu">
                 <li><a href="#home">화원읍</a></li>
@@ -164,180 +200,53 @@
                 <li><a href="#home">다사읍</a></li>
                 <li><a href="#home">유가읍</a></li>
                 <li><a href="#home">옥포읍</a></li>
-				<li><a href="#home">현풍읍</a></li>
+                <li><a href="#home">현풍읍</a></li>
                 <li><a href="#home">가창면</a></li>
                 <li><a href="#home">하빈면</a></li>
                 <li><a href="#home">구지면</a></li>
-            </ul>
-        </li>
+            </ul></li>
     </ul>
 </nav>
 
 <div class="content">
-<table cellpadding="18" cellspacing="0">
-    <thead>
-    <img src="${pageContext.request.contextPath}/image/deagu.png" alt="daegu logo">
-    <tr>
-        <th>번호</th>
-        <th>지역명</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>게시일</th>
-        <th>조회수</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td><a href="detail.jsp">집이 너무 멀어요</a></td>
-        <td>mingiSeo</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-        <td>2</td>
-        <td>동구 신암동</td>
-        <td>게시물 2</td>
-        <td>author2</td>
-        <td>2021-06-02</td>
-        <td>216</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>북구 고성동</td>
-        <td>제목 3</td>
-        <td>author3</td>
-        <td>2021-05-02</td>
-        <td>34</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>수성구 두산동</td>
-        <td>제목 4</td>
-        <td>author4</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나ㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나ㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나ㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나ㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나ㅏㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나ㅏ</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>11</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>14</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>15</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>17</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    <tr>
-        <td>18</td>
-        <td>김성동</td>
-        <td>제목임</td>
-        <td>나나</td>
-        <td>2021-04-02</td>
-        <td>123</td>
-    </tr>
-    </tbody>
-</table>
+    <table cellpadding="18" cellspacing="0">
+        <thead>
+        <img src="${pageContext.request.contextPath}/image/deagu.png" alt="daegu logo">
+        <tr>
+            <th>번호</th>
+            <th>지역명</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>게시일</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% while (rs.next()) { %>
+        <tr>
+            <td><%=rs.getInt("ID")%></td>
+            <td><%=rs.getNString("WRITER_ID")%></td>
+
+            <td><a href="detail.jsp?id=<%=rs.getInt("ID")%>">
+                <%=rs.getNString("TITLE")%></a></td>
+
+            <td><%=rs.getNString("WRITER_ID")%></td>
+            <td><%=rs.getTimestamp("REGDATE")%></td>
+            <td><%=rs.getInt("HIT")%></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
 </div>
-<div style="position:relative">
-  <p><a class="newwrite" href="write.jsp">쓰기</a></p>
+<div style="position: relative">
+    <p>
+        <a class="newwrite" href="write.jsp">쓰기</a>
+    </p>
 </div>
-<div class="row" style="background-color:#ccc;">
-<p><a href="index.jsp">처음화면으로</a></p>
+<div class="row" style="background-color: #ccc;">
+    <p>
+        <a href="index.jsp">처음화면으로</a>
+    </p>
 </div>
 </body>
 </html>
