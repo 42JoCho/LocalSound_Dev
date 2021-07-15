@@ -29,7 +29,7 @@
 </form>
 
 
-<div class="login_option">
+<div class="login_option" >
     <div class="login_option_1">
         <div>
             <input type="checkbox" name="" id="">
