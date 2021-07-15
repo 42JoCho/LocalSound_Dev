@@ -207,12 +207,12 @@
         <tbody>
         <c:forEach items="${postList }" var="post">
         <tr>
-            <td>${post.PID }</td>
-            <td>${post.DONG_NAME }</td>
-            <td><a href="getPost.do?PID=${post.PID }">${post.TITLE }</a></td>
-            <td>${post.AUTHOR }</td>
-            <td>${post.PDATE }</td>
-            <td>${post.VIEWCOUNT }</td>
+            <td>${post.postId }</td>
+            <td>${post.dongName }</td>
+            <td><a href="getPost.do?PID=${post.postId }">${post.postTitle }</a></td>
+            <td>${post.postAuthor }</td>
+            <td>${post.postDate }</td>
+            <td>${post.postViewCount }</td>
         </tr>
         </c:forEach>
         </tbody>
