@@ -2,14 +2,17 @@ package com.bbgg_dev.controller;
 
 import com.bbgg_dev.login.Impl.LoginDAO;
 import com.bbgg_dev.login.LoginVO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginController implements Controller {
-    @Override
+@Controller
+public class LoginController  {
+
+    @RequestMapping(value = "/login.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("로그인 처리");
 
@@ -27,7 +30,7 @@ public class LoginController implements Controller {
         if (user != null) {
             mav.setViewName("redirect:getPostList.do");
         }else{
-            mav.setViewName("login");
+            mav.setViewName("/login.jsp");
         }
         return mav;
     }

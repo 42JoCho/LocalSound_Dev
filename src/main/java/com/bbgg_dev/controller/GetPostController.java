@@ -2,16 +2,18 @@ package com.bbgg_dev.controller;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-public class GetPostController implements Controller {
 
-    @Override
+@Controller
+public class GetPostController {
+
+    @RequestMapping(value = "/getPost.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 검색할 게시글 번호 추출
@@ -28,7 +30,7 @@ public class GetPostController implements Controller {
         // 3. 검색 결과를 세션에 저장하고 상세 화면 리턴
         ModelAndView mav = new ModelAndView();
         mav.addObject("post", post);
-        mav.setViewName("detail");
+        mav.setViewName("/detail.jsp");
         return mav;
     }
 }

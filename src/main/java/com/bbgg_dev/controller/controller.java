@@ -8,6 +8,6 @@ public class controller {
 
     @RequestMapping(value = "/")
     public String test(){
-        return "index";
+        return "/index.jsp";
     }
 }

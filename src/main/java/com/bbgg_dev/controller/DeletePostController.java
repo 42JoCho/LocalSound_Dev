@@ -2,15 +2,18 @@ package com.bbgg_dev.controller;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DeletePostController implements Controller {
 
-    @Override
+@Controller
+public class DeletePostController {
+
+    @RequestMapping(value = "/deletePost.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 삭제 처리");
 

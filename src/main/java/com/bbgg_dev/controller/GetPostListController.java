@@ -1,20 +1,20 @@
 package com.bbgg_dev.controller;
 
-import com.bbgg_dev.login.LoginVO;
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
-public class GetPostListController implements Controller {
+@Controller
+public class GetPostListController  {
 
-    @Override
+    @RequestMapping(value = "/getPostList.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         System.out.println("글 목록 검색 처리");
@@ -32,7 +32,7 @@ public class GetPostListController implements Controller {
 
         ModelAndView mav = new ModelAndView();
         mav.addObject("postList", postList);
-        mav.setViewName("main");
+        mav.setViewName("/main.jsp");
         return mav;
     }
 }
