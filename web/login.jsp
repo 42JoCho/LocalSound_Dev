@@ -16,7 +16,7 @@
 <body>
 <h1 class="logo"><a href="main.jsp" class="title">방방곡곡</a></h1>
 
-<form action="login.do" method="post">
+<form action="login.do" method="post" >
     <div class="login">
         <div>
             <input class="login_data" type="text" name="id" placeholder="아이디">
