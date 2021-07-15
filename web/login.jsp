@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginUI.css">
 </head>
 
-<body>
+<body >
 <h1 class="logo"><a href="main.jsp" class="title">방방곡곡</a></h1>
 
 <form action="login.do" method="post" >
