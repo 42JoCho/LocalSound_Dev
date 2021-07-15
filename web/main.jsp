@@ -1,23 +1,7 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%--<%
-    String url = "jdbc:mysql://localhost/mydb";
-    String id = "root";
-    String password = "1234";
 
-    Class.forName("com.mysql.jdbc.Driver");
-
-    // 2단계 데이터베이스 접속
-    Connection conn = DriverManager.getConnection(url, id, password);
-    System.out.println("데이터베이스 접속 성공");
-    // SQL 문장 객체 생성 및 설정
-    Statement stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
-%>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +70,7 @@
                 return false;
             } else {
                 var str = document.getElementById("login");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
             }
         </script>
         <a id="regist" href="regist.jsp">회원가입</a>
@@ -221,19 +205,16 @@
         </tr>
         </thead>
         <tbody>
-<%--        <% while (rs.next()) { %>
+        <c:forEach items="${postList }" var="post">
         <tr>
-            <td><%=rs.getInt("PID")%></td>
-            <td><%=rs.getNString("DONG_NAME")%></td>
-
-            <td><a href="detail.jsp?id=<%=rs.getInt("PID")%>">
-                <%=rs.getNString("TITLE")%></a></td>
-
-            <td><%=rs.getNString("AUTHOR")%></td>
-            <td><%=rs.getTimestamp("PDATE")%></td>
-            <td><%=rs.getInt("VIEWCOUNT")%></td>
+            <td>${post.PID }</td>
+            <td>${post.DONG_NAME }</td>
+            <td><a href="getPost.do?PID=${post.PID }">${post.TITLE }</a></td>
+            <td>${post.AUTHOR }</td>
+            <td>${post.PDATE }</td>
+            <td>${post.VIEWCOUNT }</td>
         </tr>
-        <% } %>--%>
+        </c:forEach>
         </tbody>
     </table>
 </div>
@@ -245,6 +226,7 @@
 <div class="row" style="background-color: #ccc;">
     <p>
         <a href="index.jsp">처음화면으로</a>
+        <a href="detail.jsp">글보기항목으로</a>
     </p>
 </div>
 </body>

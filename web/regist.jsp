@@ -37,7 +37,7 @@
 </div>
 <!-- wrapper -->
 <div id="wrapper">
-    <form action="main.jsp" method="post">
+    <form action="signIn.do" method="post">
         <div id="content">
 
             <!-- ID -->
