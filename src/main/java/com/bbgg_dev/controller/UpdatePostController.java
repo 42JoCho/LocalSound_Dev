@@ -2,6 +2,8 @@ package com.bbgg_dev.controller;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UpdatePostController implements Controller {
 
     @Override
-    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 수정 처리");
 
         try {
@@ -31,6 +33,8 @@ public class UpdatePostController implements Controller {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "updatePost.do";
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("redirect:getPostList.do");
+        return mav;
     }
 }

@@ -2,16 +2,17 @@ package com.bbgg_dev.controller;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
-import java.sql.Date;
 
 public class InsertPostController implements Controller {
 
     @Override
-    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         try {
             System.out.println("글 등록 처리");
             request.setCharacterEncoding("EUC-KR");
@@ -36,7 +37,10 @@ public class InsertPostController implements Controller {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
         // 3. 화면 글 목록으로 전환
-        return "getPostList.do";
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("redirect:getPostList.do");
+        return mav;
     }
 }

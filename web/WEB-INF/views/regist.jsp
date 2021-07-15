@@ -5,21 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%
-    String url = "jdbc:mysql://localhost/book_db";
-    String id = "root";
-    String password = "tjdehd450";
-    String sql = "SELECT * FROM notice";
-
-    Class.forName("com.mysql.jdbc.Driver");
-
-    // 2단계 데이터베이스 접속
-    Connection conn = DriverManager.getConnection(url, id, password);
-    System.out.println("데이터베이스 접속 성공");
-    // SQL 문장 객체 생성 및 설정
-    Statement stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
-%>
-<%
     String ctx = request.getContextPath();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -33,7 +18,7 @@
 <body>
 <!-- header -->
 <div id="header">
-    <a href="SignUpVO.java" title="홈으로 돌아가기"><img src="image/logo.png" id="logo"></a>
+    <a href="main.jsp" title="홈으로 돌아가기"><img src="../../image/logo.png" id="logo"></a>
 </div>
 <!-- wrapper -->
 <div id="wrapper">
@@ -57,7 +42,7 @@
                 <span class="box int_pass">
                         <input type="password" id="pswd1" name="pw" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
-                        <img src="image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                        <img src="../../image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>
@@ -67,7 +52,7 @@
                 <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
                 <span class="box int_pass_check">
                         <input type="password" id="pswd2" class="int" maxlength="20">
-                        <img src="image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                        <img src="../../image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>
@@ -157,6 +142,6 @@
     </form>
 </div>
 <!-- wrapper -->
-<script src="regist1/js/regist_main.js"></script>
+<script src="../../regist1/js/regist_main.js"></script>
 </body>
 </html>

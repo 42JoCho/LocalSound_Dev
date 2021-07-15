@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- Annotation 활성화 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <context:component-scan base-package="com.bbgg_dev"></context:component-scan>
+
+    <!--HandlerMapping 등록-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/login.do">login</prop>
+                <prop key="/getPostList.do">getPostList</prop>
+                <prop key="/getPost.do">getPost</prop>
+                <prop key="/insertPost.do">insertPost</prop>
+                <prop key="/updatePost.do">updatePost</prop>
+                <prop key="/deletePost.do">deletePost</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--Controller 등록-->
+    <bean id="login" class="com.bbgg_dev.controller.LoginController"></bean>
+    <bean id="getPostList" class="com.bbgg_dev.controller.GetPostListController"></bean>
+    <bean id="getPost" class="com.bbgg_dev.controller.GetPostController"></bean>
+    <bean id="insertPost" class="com.bbgg_dev.controller.InsertPostController"></bean>
+    <bean id="updatePost" class="com.bbgg_dev.controller.UpdatePostController"></bean>
+    <bean id="deletePost" class="com.bbgg_dev.controller.DeletePostController"></bean>
+
+    <!--ViewResolver 등록-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+</beans>

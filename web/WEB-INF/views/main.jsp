@@ -4,20 +4,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%--<%
-    String url = "jdbc:mysql://localhost/mydb";
-    String id = "root";
-    String password = "1234";
 
-    Class.forName("com.mysql.jdbc.Driver");
-
-    // 2단계 데이터베이스 접속
-    Connection conn = DriverManager.getConnection(url, id, password);
-    System.out.println("데이터베이스 접속 성공");
-    // SQL 문장 객체 생성 및 설정
-    Statement stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
-%>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -220,21 +207,6 @@
             <th>조회수</th>
         </tr>
         </thead>
-        <tbody>
-<%--        <% while (rs.next()) { %>
-        <tr>
-            <td><%=rs.getInt("PID")%></td>
-            <td><%=rs.getNString("DONG_NAME")%></td>
-
-            <td><a href="detail.jsp?id=<%=rs.getInt("PID")%>">
-                <%=rs.getNString("TITLE")%></a></td>
-
-            <td><%=rs.getNString("AUTHOR")%></td>
-            <td><%=rs.getTimestamp("PDATE")%></td>
-            <td><%=rs.getInt("VIEWCOUNT")%></td>
-        </tr>
-        <% } %>--%>
-        </tbody>
     </table>
 </div>
 <div style="position: relative">

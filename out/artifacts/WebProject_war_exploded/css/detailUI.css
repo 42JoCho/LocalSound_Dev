@@ -31,36 +31,42 @@ p.title {
 button.next {
 	width: 70px;
 	height: 30px;
-	border: 0px;
-	background-color: teal;
+	border: 0.5px solid rgb(200, 200, 200);
+	background-color: rgb(255,255,255)!important;
 	outline: none;
 	float: right;
-	color: rgb(250, 250, 250);
+	color: rgb(0, 0, 0)!important;
 	margin:5px;
+
+}
+div.pdate{
+	border-bottom: 1px solid ;
+	border-color: rgb(200,200,200);
+	padding:30px;
 }
 /*글 작성*/
 div.detailcontent {
 	font-size: 12pt;
 	padding:20px;
+	top-margin:500px;
 	height: auto;
-	border-bottom: 1px solid teal;
+	border-bottom: 1px solid;
+	border-color: rgb(200,200,200);
 }
 /*댓글*/
 textarea.detailcomment {
-	border: 1px solid teal;
+	border: 2px solid teal;
 	font-size: 12pt;
 	width: 744px;
 	height: 39px;
 	resize: none;
 	left: 50%;
 }
-
 button.comment {
-	margin: 5px;
-	width: 50px;
-	height: 45px;
-	border: 0px;
 	margin: 0px;
+	width: 48px;
+	height: 47px;
+	border: 0px;
 	padding: 0px;
 	background-color: teal;
 	outline: none;
@@ -91,4 +97,8 @@ button.commentdel{
 
 p.commentlist {
 	border-bottom: 1px solid teal;
+}
+span{
+	font-size:0.813rem;
+	color: rgb(100,100,100);
 }

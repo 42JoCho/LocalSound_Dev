@@ -4,21 +4,6 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%
-    String url = "jdbc:mysql://localhost/book_db";
-    String id = "root";
-    String password = "tjdehd450";
-    String sql = "SELECT * FROM notice";
-
-    Class.forName("com.mysql.jdbc.Driver");
-
-    // 2단계 데이터베이스 접속
-    Connection conn = DriverManager.getConnection(url, id, password);
-    System.out.println("데이터베이스 접속 성공");
-    // SQL 문장 객체 생성 및 설정
-    Statement stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
-%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +18,7 @@
 <body>
 <h1 class="logo"><a href="main.jsp" class="title">방방곡곡</a></h1>
 
-<form action="loginVO.java" method="post">
+<form action="/login.do" method="post">
     <div class="login">
         <div>
             <input class="login_data" type="text" placeholder="아이디">

@@ -26,7 +26,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.8" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.8" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="WebProject/web/Web" />
