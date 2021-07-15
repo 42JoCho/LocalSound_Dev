@@ -117,8 +117,8 @@
 		<form action="findId" class="form-signin" method="POST">
 			<p class="text2">${findid2}</p>
 			<input type="text" name="name" id="name" class="form-control"
-				   placeholder="이름" required autofocus><BR> <input
-				type="email" name="email" id="email" class="form-control"
+				   placeholder="이름" required autofocus><BR>
+			<input type="email" name="email" id="email" class="form-control"
 				placeholder="이메일" required><br>
 			<p class="check" id="check">${check}</p>
 			<br />

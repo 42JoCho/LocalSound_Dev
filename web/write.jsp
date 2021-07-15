@@ -37,7 +37,7 @@
 			width: 60px;
 			height: 40px;
 		}
-		button.del {
+		.del {
 			float: right;
 			margin: 5px;
 			border: 0.5px solid rgb(200, 200, 200);
@@ -297,9 +297,10 @@
 	</ul>
 </nav>
 </script>
+<form id="frm" action="insertPost.do" method="post">
 <div class="middle">
 	<tr>
-		<select class="guName" onchange="selectOnChange()">
+		<select class="guName" name="guName" onchange="selectOnChange()">
 			<%-- 구 이름 selector, selectOnChange() 스크립트로 변화 처리 --%>
 			<option>동구</option>
 			<option>북구</option>
@@ -310,7 +311,7 @@
 			<option>달서구</option>
 			<option>달성군</option>
 		</select>
-		<select class="dongName">
+		<select class="dongName" name="dongName">
 			<option>신암동</option>
 			<option>신천동</option>
 			<option>효목동</option>
@@ -325,25 +326,22 @@
 			<option>공산동</option>
 		</select>
 	</tr>
-	<form id="frm" action="main.jsp" method="post">
 		<table width="100%">
+
 			<tr>
-				<td class="title"><input type="text" id="title" name="title"
+				<td class="title"><input type="text" id="title" name="postTitle"
 										 placeholder="제목을 입력하세요" style="width: 640px" /></td>
 			</tr>
 			<tr>
-				<td><textarea rows="10" cols="30" id="ir1" name="content"
+				<td><textarea rows="10" cols="30" id="ir1" name="postText"
 							  style="width: 650px; height: 350px;"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="button" class="del" id="save" value="등록" />
-	</form>
-
-					<form action="main.jsp" method="post">
-						<button class="del">취소</button>
-					</form>
-					</td>
-			</tr>
+				<td colspan="2"><input type="button" class="del" id="save" value="등록" /></td>
+			<td><button href="main.jsp">취소</button></td>
+		</tr>
+		</table>
 </div>
+</form>
 </body>
 </html>

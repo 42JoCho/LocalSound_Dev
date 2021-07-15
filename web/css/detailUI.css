@@ -20,7 +20,6 @@ div.write {
 /*제목*/
 p.title {
 	height: 40px;
-	width: 400px;
 	font-size: 25px;
 	width: 780px;
 	padding: 10px;
@@ -73,30 +72,15 @@ button.comment {
 	float: right;
 	color: rgb(250, 250, 250);
 }
-
-button.commentedit{
-	margin: 3px;
-	width: 70px;
-	height: 30px;
-	border-style: inset;
-	background-color: teal;
-	float: right;
-	color: rgb(250, 250, 250);
-
-}
-
-button.commentdel{
-	margin: 3px;
-	width: 70px;
-	height: 30px;
-	border-style: inset;
-	background-color: teal;
-	float: right;
-	color: rgb(250, 250, 250);
-}
-
 p.commentlist {
 	border-bottom: 1px solid teal;
+
+}
+a.comment{
+	float: right;
+	text-decoration: none;
+	padding:0.2rem;
+	color:rgb(50,50,50);
 }
 span{
 	font-size:0.813rem;

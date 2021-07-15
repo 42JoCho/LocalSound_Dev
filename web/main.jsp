@@ -1,7 +1,4 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
@@ -73,7 +70,7 @@
                 return false;
             } else {
                 var str = document.getElementById("login");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
             }
         </script>
         <a id="regist" href="regist.jsp">회원가입</a>
@@ -207,6 +204,18 @@
             <th>조회수</th>
         </tr>
         </thead>
+        <tbody>
+        <c:forEach items="${postList }" var="post">
+        <tr>
+            <td>${post.PID }</td>
+            <td>${post.DONG_NAME }</td>
+            <td><a href="getPost.do?PID=${post.PID }">${post.TITLE }</a></td>
+            <td>${post.AUTHOR }</td>
+            <td>${post.PDATE }</td>
+            <td>${post.VIEWCOUNT }</td>
+        </tr>
+        </c:forEach>
+        </tbody>
     </table>
 </div>
 <div style="position: relative">
@@ -217,6 +226,7 @@
 <div class="row" style="background-color: #ccc;">
     <p>
         <a href="index.jsp">처음화면으로</a>
+        <a href="detail.jsp">글보기항목으로</a>
     </p>
 </div>
 </body>

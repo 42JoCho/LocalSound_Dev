@@ -1,31 +1,7 @@
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
-<%
-	String url = "jdbc:mysql://localhost/mysql";
-	String id = "root";
-	String password = "tjdehd450";
 
-	String id_ = request.getParameter("id");
-
-	String sql = "SELECT * FROM post where PID=?";
-
-	// 1단계 클래스 JDBC 드라이버 로드
-	Class.forName("com.mysql.jdbc.Driver");
-
-	// 2단계 데이터베이스 접속
-	Connection conn = DriverManager.getConnection(url, id, password);
-	System.out.println("데이터베이스 접속 성공");
-	// SQL 문장 객체 생성 및 설정
-	PreparedStatement stmt = conn.prepareStatement(sql);
-	stmt.setString(1, id_);
-	ResultSet rs = stmt.executeQuery();
-	rs.next();
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +66,7 @@
 				return false;
 			} else {
 				var str = document.getElementById("login");
-				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
+				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
 			}
 		</script>
 		<a id="regist" href="regist.jsp">회원가입</a>
@@ -213,17 +189,17 @@
 </nav>
 <div class="write">
 	<div>
-		<p class="title"><%=rs.getNString("TITLE")%></p>
+		<p class="title">글 제목입니다${post.TITLE }</p>
 	</div>
 	<div class= "pdate">
 		<tr>
-			<td class="name"><span>작성자</span>    <%=rs.getNString("AUTHOR")%></td>
-			<td class="day"><span>작성일</span>    <%=rs.getTimestamp("PDATE")%></td>
-			<td class="count"><span>조회수</span>    <%=rs.getInt("VIEWCOUNT")%></td>
+			<td class="name"><span>작성자</span> ${post.AUTHOR}</td>
+			<td class="day"><span>작성일</span> ${post.PDATE}</td>
+			<td class="count"><span>조회수</span> ${post.VIEWCOUNT}</td>
 		</tr>
 	</div>
 	<div class="detailcontent">
-		<%=rs.getNString("PMAIN_TEXT")%>
+		<p>메인내용입니다${post.PMAIN_TEXT }</p>
 	</div>
 	<div class="detail">
 		<tr>
@@ -233,19 +209,19 @@
 				</form>
 			</td>
 			<td>
-				<form action="write.jsp" method="post">
+				<form action="updatePost.do" method="post">
 					<button class="next">수정</button>
 				</form>
 			</td>
 			<td>
-				<form action="login.jsp" method="post">
+				<form action="deletePost.do" method="post">
 					<button class="next">삭제</button>
 				</form>
 			</td>
 		</tr>
 	</div>
 	<div>
-		<form id="frm" action="detail.jsp" method="post">
+		<form action="detail.jsp" method="post">
 				<textarea class="detailcomment" name="detailcomment"
 						  placeholder="댓글을 입력하세요" cols="40" rows="10"></textarea>
 			<button class="comment">등록</button>
@@ -254,12 +230,19 @@
 	<div>
 		<p class="commentcount">댓글1</p>
 		<p class="commentlist">
-			<% while (rs.next()) { %>
-
-
-			<button class="commentedit">수정</button>
-			<button class="commentdel">삭제</button>
-			<% } %>
+			${comment.CMAIN_TEXT }댓글내용
+				<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+				<span><a class="comment" href="댓글수정.do">수정</a></span>
+		</p>
+		<p class="commentlist">
+			${comment.CMAIN_TEXT }댓글내용1
+			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+			<span><a class="comment" href="댓글수정.do">수정</a></span>
+		</p>
+		<p class="commentlist">
+			${comment.CMAIN_TEXT }댓글내용2
+			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 	</div>
 </div>

@@ -18,11 +18,11 @@
 <body>
 <!-- header -->
 <div id="header">
-    <a href="main.jsp" title="홈으로 돌아가기"><img src="image/logo.png" id="logo"></a>
+    <a href="main.jsp" title="홈으로 돌아가기"><img src="/image/logo.png" id="logo"></a>
 </div>
 <!-- wrapper -->
+<form action="signIn.do" method="post">
 <div id="wrapper">
-    <form action="main.jsp" method="post">
         <div id="content">
 
             <!-- ID -->
@@ -42,7 +42,7 @@
                 <span class="box int_pass">
                         <input type="password" id="pswd1" name="pw" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
-                        <img src="image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                        <img src="/image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>
@@ -52,7 +52,7 @@
                 <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
                 <span class="box int_pass_check">
                         <input type="password" id="pswd2" class="int" maxlength="20">
-                        <img src="image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                        <img src="/image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>
@@ -135,13 +135,13 @@
 
             <!-- JOIN BTN-->
             <div class="btn_area">
-                <button type="button" id="btnJoin">가입하기</button>
+                <button id="btnJoin">가입하기</button>
             </div>
         </div>
         <!-- content-->
-    </form>
 </div>
+    <script src="regist1/js/regist_main.js"></script>
+</form>
 <!-- wrapper -->
-<script src="regist1/js/regist_main.js"></script>
 </body>
 </html>
