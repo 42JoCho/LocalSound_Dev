@@ -17,6 +17,7 @@
 }
 
 body{
+    padding-top: 200px;
     font-family: 'NEXON Lv1 Gothic OTF';
     display: flex;
     flex-direction: column;

@@ -141,11 +141,11 @@
 
 		//로그인 검사
 		function checkLogin() {
-			var id = '${sessionID}'; // 수정 ''처리
+			var id = '${login.memberId}';
+			alert(id);
 			// 수정 ''공백 비교
 			if (id == '') {
 				alert("로그인 후 글쓰기가 가능합니다.");
-				location.href = 'main.jsp';
 				return false;
 			} else {
 				location.href = 'write.jsp';
@@ -156,7 +156,7 @@
 </head>
 <body>
 <script type="text/javascript">
-	//checkLogin()
+	checkLogin()
 </script>
 
 <header>
@@ -171,8 +171,8 @@
 	<p class="login">
 		<a id="login" href="login.jsp">로그인</a> /
 		<script>
-			var id = '${sessionID}';
-			if (id == '') {
+			var id = '';
+			if (id != '') {
 				return false;
 			} else {
 				var str = document.getElementById("login");

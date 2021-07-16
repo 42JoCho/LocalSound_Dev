@@ -11,6 +11,9 @@
 		  href=" ${pageContext.request.contextPath}/css/detailUI.css">
 	<link rel="stylesheet"
 		  href=" ${pageContext.request.contextPath}/css/menu.css">
+	<link rel="stylesheet"
+		  href=" ${pageContext.request.contextPath}/css/likebutton.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 	<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -45,7 +48,14 @@
 			}
 			lastScrollTop = st;
 		}
+		$(function(){
+			$(document).one('click', '.like-review', function(e) {
+				$(this).html('<i class="fa fa-heart" aria-hidden="true"></i> 눌러짐');
+				$(this).children('.fa-heart').addClass('animate-like');
+			});
+		});
 	</script>
+
 </head>
 <body>
 <header>
@@ -189,20 +199,28 @@
 </nav>
 <div class="write">
 	<div>
-		<p class="title">글 제목입니다${post.TITLE }</p>
+		<p class="title">${post.postTitle }</p>
 	</div>
 	<div class= "pdate">
 		<tr>
-			<td class="name"><span>작성자</span> ${post.AUTHOR}</td>
-			<td class="day"><span>작성일</span> ${post.PDATE}</td>
-			<td class="count"><span>조회수</span> ${post.VIEWCOUNT}</td>
+			<td class="name"><span>작성자</span> ${post.postAuthor }</td>
+			<td class="day"><span>작성일</span> ${post.postDate }</td>
+			<td class="count"><span>조회수</span> ${post.postViewCount }</td>
 		</tr>
 	</div>
 	<div class="detailcontent">
-		<p>메인내용입니다${post.PMAIN_TEXT }</p>
+		<p>${post.postText}</p>
 	</div>
 	<div class="detail">
+
 		<tr>
+			<span class="like-content">
+				<button class="btn-secondary like-review">
+					<i class="fa fa-heart" aria-hidden="true"></i>좋아요
+				</button>
+			</span>
+
+
 			<td>
 				<form action="main.jsp" method="post">
 					<button class="next">목록</button>
@@ -230,17 +248,30 @@
 	<div>
 		<p class="commentcount">댓글1</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용
+			<span class="author">김성동</span><br>
+			<br>
+			치킨은 비비큐 황금 올리브죠
 				<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 				<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용1
+			<span class="author">서민기</span><br>
+			<br>
+			ㄴ공감합니다
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용2
+			<span class="author">오다은</span><br>
+			<br>
+			교촌 허니콤보!
+			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+			<span><a class="comment" href="댓글수정.do">수정</a></span>
+		</p>
+		<p class="commentlist">
+			<span class="author">김덕모</span><br>
+			<br>
+			요즘 호식이도 맛있어요
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
