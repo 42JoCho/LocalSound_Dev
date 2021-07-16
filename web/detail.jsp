@@ -230,17 +230,30 @@
 	<div>
 		<p class="commentcount">댓글1</p>
 		<p class="commentlist">
-			댓글내용
+			<span class="author">김성동</span><br>
+			<br>
+			치킨은 비비큐 황금 올리브죠
 				<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 				<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			댓글내용1
+			<span class="author">서민기</span><br>
+			<br>
+			ㄴ공감합니다
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			댓글내용2
+			<span class="author">오다은</span><br>
+			<br>
+			교촌 허니콤보!
+			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+			<span><a class="comment" href="댓글수정.do">수정</a></span>
+		</p>
+		<p class="commentlist">
+			<span class="author">김덕모</span><br>
+			<br>
+			요즘 호식이도 맛있어요
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
