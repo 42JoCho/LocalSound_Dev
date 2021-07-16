@@ -123,7 +123,7 @@
 			<p class="check" id="check">${check}</p>
 			<br />
 			<button id="btn-Yes" class="btn btn-lg btn-primary btn-block"
-					type="submit">아 이 디 찾 기</button>
+					type="submit">아이디 찾기</button>
 
 		</form>
 

@@ -6,9 +6,10 @@
   	white-space: nowrap;
 	}
     .rayout1 {
+		border: 0.5px solid rgb(230, 230, 230);
+		border-radius: 25px;
         width: 450px;
         height:750px;
-        border:1px solid #008080;
         float:left;
         margin-right:10px;
         margin-top:80px;
@@ -20,11 +21,11 @@
     .rayout2 {
         width: auto;
         height:750px;
-        border:1px solid  #008080 ;
+		border: 0.5px solid rgb(230, 230, 230);
+		border-radius: 25px;
         float:left;
     	margin-top:80px;
     	margin-left:700px;
-    	overflow:scroll;
     	position:absolute;
     	white-space: nowrap;
     	background-color: white;

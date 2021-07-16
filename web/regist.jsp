@@ -1,7 +1,3 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%
@@ -18,7 +14,7 @@
 <body>
 <!-- header -->
 <div id="header">
-    <a href="main.jsp" title="홈으로 돌아가기"><img src="/image/logo.png" id="logo"></a>
+    <a href="main.jsp" title="홈으로 돌아가기"><img src="${pageContext.request.contextPath}/image/logo.png" id="logo"></a>
 </div>
 <!-- wrapper -->
 <form action="signIn.do" method="post">
@@ -42,7 +38,7 @@
                 <span class="box int_pass">
                         <input type="password" id="pswd1" name="pw" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
-                        <img src="/image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                        <img src="${pageContext.request.contextPath}/image/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>
@@ -52,7 +48,7 @@
                 <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
                 <span class="box int_pass_check">
                         <input type="password" id="pswd2" class="int" maxlength="20">
-                        <img src="/image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                        <img src="${pageContext.request.contextPath}/image/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
                 <span class="error_next_box"></span>
             </div>

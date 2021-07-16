@@ -61,7 +61,7 @@ String id_str = session.getId();
         <a href="main.jsp">방방곡곡</a>
     </h1>
     <div class="search">
-        <input type="text" placeholder="검색어를 입력">
+        <input type="text" placeholder="검색어 입력">
         <button>검색</button>
     </div>
     <p class="login">
@@ -233,6 +233,7 @@ String id_str = session.getId();
         <a href="detail.jsp">글보기항목으로</a>
         <a href="logout.do">로그아웃</a>
         <a href="Information.jsp">내정보</a>
+        <a href="asd.jsp">내정보</a>
     </p>
 </div>
 </body>
