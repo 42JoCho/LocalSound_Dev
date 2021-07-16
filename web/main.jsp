@@ -53,24 +53,28 @@
     </script>
 </head>
 <body>
+<%
+String id_str = session.getId();
+%>
 <header>
     <h1>
         <a href="main.jsp">방방곡곡</a>
     </h1>
     <div class="search">
-        <input type="text" placeholder="검색어 입력">
+        <input type="text" placeholder="검색어를 입력">
         <button>검색</button>
     </div>
-
     <p class="login">
         <a id="login" href="login.jsp">로그인</a> /
         <script>
             var id = '${sessionID}';
             if (id == '') {
-                return false;
-            } else {
                 var str = document.getElementById("login");
                 str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
+                return false;
+            } else if(id != ''){
+                var str = document.getElementById("login");
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그인</a>';
             }
         </script>
         <a id="regist" href="regist.jsp">회원가입</a>
@@ -208,8 +212,8 @@
         <c:forEach items="${postList }" var="post">
         <tr>
             <td>${post.postId }</td>
-            <td>${post.dongName }</td>
-            <td><a href="getPost.do?PID=${post.postId }">${post.postTitle }</a></td>
+            <td>${post.guName } ${post.dongName }</td>
+            <td><a href="getPost.do?pid=${post.postId }">${post.postTitle }</a></td>
             <td>${post.postAuthor }</td>
             <td>${post.postDate }</td>
             <td>${post.postViewCount }</td>
@@ -220,13 +224,15 @@
 </div>
 <div style="position: relative">
     <p>
-        <a class="newwrite" href="write.jsp">쓰기</a>
+        <a class="newwrite" href="write.jsp">새 글</a>
     </p>
 </div>
 <div class="row" style="background-color: #ccc;">
     <p>
         <a href="index.jsp">처음화면으로</a>
         <a href="detail.jsp">글보기항목으로</a>
+        <a href="logout.do">로그아웃</a>
+        <a href="Information.jsp">내정보</a>
     </p>
 </div>
 </body>

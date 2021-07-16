@@ -189,17 +189,17 @@
 </nav>
 <div class="write">
 	<div>
-		<p class="title">글 제목입니다${post.TITLE }</p>
+		<p class="title">${post.postTitle }</p>
 	</div>
 	<div class= "pdate">
 		<tr>
-			<td class="name"><span>작성자</span> ${post.AUTHOR}</td>
-			<td class="day"><span>작성일</span> ${post.PDATE}</td>
-			<td class="count"><span>조회수</span> ${post.VIEWCOUNT}</td>
+			<td class="name"><span>작성자</span> ${post.postAuthor }</td>
+			<td class="day"><span>작성일</span> ${post.postDate }</td>
+			<td class="count"><span>조회수</span> ${post.postViewCount }</td>
 		</tr>
 	</div>
 	<div class="detailcontent">
-		<p>메인내용입니다${post.PMAIN_TEXT }</p>
+		<p>${post.postText}</p>
 	</div>
 	<div class="detail">
 		<tr>
@@ -230,17 +230,17 @@
 	<div>
 		<p class="commentcount">댓글1</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용
+			댓글내용
 				<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 				<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용1
+			댓글내용1
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
-			${comment.CMAIN_TEXT }댓글내용2
+			댓글내용2
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
