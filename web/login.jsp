@@ -12,7 +12,9 @@
 </head>
 
 <body>
-<h1 class="logo"><a href="main.jsp" class="title">방방곡곡</a></h1>
+<div id="header">
+    <a href="main.jsp" title="홈으로 돌아가기" ><img src="${pageContext.request.contextPath}/image/logo.png" id="logo"></a>
+</div>
 
 <form action="login.do" method="post">
     <div class="login">
