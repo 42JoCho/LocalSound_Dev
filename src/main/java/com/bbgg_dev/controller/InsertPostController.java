@@ -17,7 +17,7 @@ public class InsertPostController  {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         try {
             System.out.println("글 등록 처리");
-            request.setCharacterEncoding("EUC-KR");
+            request.setCharacterEncoding("utf-8");
 
             // 1. 사용자 입력 정보 추출
             String title = request.getParameter("title");
