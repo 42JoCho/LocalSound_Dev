@@ -1,7 +1,15 @@
 @charset "UTF-8";
 /*메인페이지 본문*/
-
+@font-face {
+	font-family: 'NEXON Lv1 Gothic OTF';
+	src:
+			url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff')
+			format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 /*회원정도 수정*/
+
 	.wrap {
   	white-space: nowrap;
 	}
@@ -17,7 +25,7 @@
  		position:absolute;
  		white-space: nowrap;
         background-color: white;
-    }
+	}
     .rayout2 {
         width: auto;
         height:750px;
@@ -43,13 +51,15 @@
 	text-align: center;
     }
     .information{
+	font-weight: bold;
 	font-size: 35px;
 	color:#008080;
 	text-align: center;
 	margin : 80px;
     }
     .information2{
-	font-size: 25px;
+	font-weight: bold;
+	font-size: 35px;
 	color:#008080;
 	text-align: left;
 	margin : 50px;

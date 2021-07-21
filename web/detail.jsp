@@ -13,7 +13,7 @@
 		  href=" ${pageContext.request.contextPath}/css/menu.css">
 	<link rel="stylesheet"
 		  href=" ${pageContext.request.contextPath}/css/likebutton.css">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" />
 	<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -216,7 +216,7 @@
 		<tr>
 			<span class="like-content">
 				<button class="btn-secondary like-review">
-					<i class="fa fa-heart" aria-hidden="true"></i>좋아요
+					<i class="fa fa-heart" aria-hidden="true"></i></i>좋아요
 				</button>
 			</span>
 

@@ -91,6 +91,7 @@ span.author{
 	color: rgb(10,10,10);
 	font-size:1rem;
 }
+/*좋아요*/
 .like-content .btn-secondary {
 	margin:5px;
 	height:30px;
