@@ -22,9 +22,9 @@ public class PostDAO {
     private final String POST_INSERT = "insert into mysql.post(title, author, pmain_text, gu_name, dong_name) values(?,?,?,?,?)";
     private final String POST_UPDATE = "update mysql.post set title=?, pmain_text=?, gu_name=?, dong_name=?";
     private final String POST_DELETE = "delete from mysql.post where pid=?";
-    private final String POST_GET = "select * from mysql.post where pid=?";
+    private final String POST_GET = "select title, author, pdate, viewcount, pmain_text from mysql.post where pid=?";
     private final String POST_LIST = "select * from mysql.post order by pid desc";
-
+    private final String GET_AUTHOR = "select author from ";
     public void insertPost(PostVO vo) {
         System.out.println("====> JDBC로 insertPost() 기능 처리");
         try {
@@ -82,14 +82,18 @@ public class PostDAO {
             stmt = conn.prepareStatement(POST_GET);
             stmt.setInt(1, vo.getPostId());
             rs = stmt.executeQuery();
-            if (rs.next()) {
+            if (rs.next()){
                 post = new PostVO();
-                getPostVO(post);
+                post.setPostTitle("TITLE");
+                post.setPostTitle("AUTHOR");
+                post.setPostTitle("PDATE");
+                post.setPostTitle("VIEWCOUNT");
+                post.setPostTitle("PMAIN_TEXT");
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtil.close(rs, stmt, conn);
+            JDBCUtil.close(stmt, conn);
         }
         return post;
     }
