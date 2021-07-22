@@ -36,8 +36,12 @@
         where pid = #{postId}
     </select>
     <select id="getPostList" resultType="post" resultMap="postList">
-        select *
-        from mysql.post
-        order by pid
+        <![CDATA[
+            SELECT *
+            FROM mysql.post
+            WHERE (PMAIN_TEXT LIKE '%#{searchKeyword}%'
+                       OR TITLE LIKE '%#{searchKeyword}%')
+            ORDER BY PID DESC
+        ]]>
     </select>
 </mapper>
