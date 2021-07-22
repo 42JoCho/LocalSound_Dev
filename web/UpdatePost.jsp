@@ -141,14 +141,12 @@
 
 		//로그인 검사
 		function checkLogin() {
-			var id = '${login.memberId}';
-			alert(id);
+			var id = '${sessionId}';
 			// 수정 ''공백 비교
 			if (id == '') {
 				alert("로그인 후 글쓰기가 가능합니다.");
+				location.href = 'main.jsp';
 				return false;
-			} else {
-				location.href = 'login.jsp';
 			}
 		}
 	</script>
@@ -290,51 +288,55 @@
 	</ul>
 </nav>
 </script>
-<form id="frm" action="updatePost.do" method="post">
-<div class="middle">
-	<tr>
-		<select class="guName" name="guName" onchange="selectOnChange()">
-			<%-- 구 이름 selector, selectOnChange() 스크립트로 변화 처리 --%>
-			<option>동구</option>
-			<option>북구</option>
-			<option>서구</option>
-			<option>중구</option>
-			<option>남구</option>
-			<option>수성구</option>
-			<option>달서구</option>
-			<option>달성군</option>
-		</select>
-		<select class="dongName" name="dongName">
-			<option>신암동</option>
-			<option>신천동</option>
-			<option>효목동</option>
-			<option>도평동</option>
-			<option>불로봉무동</option>
-			<option>지저동</option>
-			<option>동촌동</option>
-			<option>방촌동</option>
-			<option>해안동</option>
-			<option>안심동</option>
-			<option>혁신동</option>
-			<option>공산동</option>
-		</select>
-	</tr>
+<form id="frm" action="insertPost.do" method="post">
+	<div class="middle">
+		<tr>
+			<select class="guName" name="guName" onchange="selectOnChange()">
+				<%-- 구 이름 selector, selectOnChange() 스크립트로 변화 처리 --%>
+				<option>동구</option>
+				<option>북구</option>
+				<option>서구</option>
+				<option>중구</option>
+				<option>남구</option>
+				<option>수성구</option>
+				<option>달서구</option>
+				<option>달성군</option>
+			</select>
+			<select class="dongName" name="dongName">
+				<option>신암동</option>
+				<option>신천동</option>
+				<option>효목동</option>
+				<option>도평동</option>
+				<option>불로봉무동</option>
+				<option>지저동</option>
+				<option>동촌동</option>
+				<option>방촌동</option>
+				<option>해안동</option>
+				<option>안심동</option>
+				<option>혁신동</option>
+				<option>공산동</option>
+			</select>
+		</tr>
+		<tr>
+			<td class="title"><input type="text"  name="author" value="${sessionId}"
+									 placeholder="이름" style="display:none" /></td>
+		</tr>
 		<table width="100%">
 
 			<tr>
-				<td class="title"><input type="text" id="title" name="title"
+				<td class="title"><input type="text" id="title" name="title" value="${post.postTitle }"
 										 placeholder="제목을 입력하세요" style="width: 640px" /></td>
 			</tr>
 			<tr>
 				<td><textarea rows="10" cols="30" id="ir1" name="mainText"
-							  style="width: 650px; height: 350px;"></textarea></td>
+							  style="width: 650px; height: 350px;">${post.postText }</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="button" class="del" id="save" value="등록" /></td>
-			<td><button href="main.jsp">취소</button></td>
-		</tr>
+				<td><button href="main.jsp">취소</button></td>
+			</tr>
 		</table>
-</div>
+	</div>
 </form>
 </body>
 </html>

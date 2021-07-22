@@ -220,15 +220,26 @@
 				</form>
 			</td>
 			<td>
-				<form action="updatePost.do" method="post">
+				<form action="UpdatePost.jsp?pid=${post.postAuthor }" method="post" id="up">
 					<button class="next">수정</button>
 				</form>
 			</td>
+
 			<td>
-				<form action="deletePost.do" method="post">
-					<button class="next">삭제</button>
+				<form action="deletePost.do" method="post" id="del">
+					<button class="next" >삭제</button>
 				</form>
 			</td>
+			<script>
+				var id = '${sessionId}'
+				if (id == '${post.postAuthor }') {
+				}else{
+					var str = document.getElementById("up");
+					str.innerHTML = '<button style="display:none"></button>';
+					var str = document.getElementById("del");
+					str.innerHTML = '<button style="display:none"></button>';
+				}
+			</script>
 		</tr>
 	</div>
 	<div>
@@ -240,34 +251,15 @@
 	</div>
 	<div>
 		<p class="commentcount">댓글1</p>
+		<c:forEach items="${postList }" var="post">
 		<p class="commentlist">
-			<span class="author">김성동</span><br>
+			<span class="author">${comment.commentAuthor}</span><br>
 			<br>
-			치킨은 비비큐 황금 올리브죠
+			${comment.commentText}
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
-		<p class="commentlist">
-			<span class="author">서민기</span><br>
-			<br>
-			ㄴ공감합니다
-			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
-			<span><a class="comment" href="댓글수정.do">수정</a></span>
-		</p>
-		<p class="commentlist">
-			<span class="author">오다은</span><br>
-			<br>
-			교촌 허니콤보!
-			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
-			<span><a class="comment" href="댓글수정.do">수정</a></span>
-		</p>
-		<p class="commentlist">
-			<span class="author">김덕모</span><br>
-			<br>
-			요즘 호식이도 맛있어요
-			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
-			<span><a class="comment" href="댓글수정.do">수정</a></span>
-		</p>
+		</c:forEach>
 	</div>
 </div>
 </body>

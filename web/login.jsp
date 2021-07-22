@@ -16,7 +16,6 @@
         var id = '${sessionId}';
         // 수정 ''공백 비교
         if (id == '') {
-
         }else{
             alert('로그인되어있습니다.')
             location.href = 'main.jsp';

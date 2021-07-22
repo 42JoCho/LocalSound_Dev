@@ -146,9 +146,7 @@
 			if (id == '') {
 				alert("로그인 후 글쓰기가 가능합니다.");
 				location.href = 'main.jsp';
-
-			}else {
-				location.href = 'write.jsp';
+				return false;
 			}
 		}
 	</script>

@@ -215,9 +215,7 @@
 <div class="row" style="background-color: #ccc;">
     <p>
         <a href="index.jsp">처음화면으로</a>
-        <a href="detail.jsp">글보기항목으로</a>
-        <a href="logout.do">로그아웃</a>
-        <a href="Information.jsp">내정보</a>
+        <a href="UpdatePost.jsp">수정</a>
         <a href="login.jsp">로그인</a>
     </p>
 </div>
