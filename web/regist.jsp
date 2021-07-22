@@ -32,7 +32,7 @@
     <a href="main.jsp" title="홈으로 돌아가기"><img src="${pageContext.request.contextPath}/image/logo.png" id="logo"></a>
 </div>
 <!-- wrapper -->
-<form action="signIn.do" method="post">
+<form action="signup.do" method="post">
 <div id="wrapper">
         <div id="content">
 
@@ -85,12 +85,12 @@
                     <!-- BIRTH_YY -->
                     <div id="bir_yy">
                             <span class="box">
-                                <input type="text" id="yy" class="int"  maxlength="4" placeholder="년(4자)">
+                                <input name="birth" type="text" id="yy" class="int"  maxlength="4" placeholder="년(4자)">
                             </span>
                     </div>
 
                     <!-- BIRTH_MM -->
-                    <div id="bir_mm">
+                    <div id="bir_mm" name="birth">
                             <span class="box">
                                 <select id="mm" class="sel">
                                     <option>월</option>
@@ -111,7 +111,7 @@
                     </div>
 
                     <!-- BIRTH_DD -->
-                    <div id="bir_dd">
+                    <div id="bir_dd" name="birth">
                             <span class="box">
                                 <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
                             </span>
@@ -126,7 +126,7 @@
             <div>
                 <h3 class="join_title"><label for="gender">성별</label></h3>
                 <span class="box gender_code">
-                        <select id="gender" class="sel">
+                        <select id="gender" class="sel" name="gender">
                             <option>성별</option>
                             <option value="M">남자</option>
                             <option value="F">여자</option>

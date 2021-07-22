@@ -220,7 +220,7 @@
 				</form>
 			</td>
 			<td>
-				<form action="UpdatePost.jsp?pid=${post.postAuthor }" method="post" id="up">
+				<form action="UpdatePost.jsp" method="post" id="up">
 					<button class="next">수정</button>
 				</form>
 			</td>

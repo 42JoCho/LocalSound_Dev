@@ -288,7 +288,7 @@
 	</ul>
 </nav>
 </script>
-<form id="frm" action="insertPost.do" method="post">
+<form id="frm" action="updatePost.do" method="post">
 	<div class="middle">
 		<tr>
 			<select class="guName" name="guName" onchange="selectOnChange()">
