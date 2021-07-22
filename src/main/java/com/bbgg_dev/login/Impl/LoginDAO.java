@@ -23,8 +23,7 @@ public class LoginDAO {
             conn = JDBCUtil.getConnection();
             stmt = conn.prepareStatement(USER_LOGIN);
             stmt.setString(1, vo.getMemberId());
-            stmt.setString(2, vo.
-                           getMemberPassword());
+            stmt.setString(2, vo.getMemberPassword());
             rs = stmt.executeQuery();
             if (rs.next()) {
                 user = new LoginVO();

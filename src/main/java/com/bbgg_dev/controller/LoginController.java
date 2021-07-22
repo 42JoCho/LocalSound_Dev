@@ -32,8 +32,9 @@ public class LoginController {
         HttpSession session = request.getSession();
         String loginSuccess = null;
         if (user != null) {
-            loginSuccess = vo.getMemberName();
+            loginSuccess = user.getMemberName();
             session.setAttribute("sessionId", loginSuccess);
+            System.out.println("세선 id : " + loginSuccess);
             mav.setViewName("redirect:getPostList.do");
         } else {
             session.setAttribute("sessionId", loginSuccess);

@@ -84,17 +84,18 @@ public class PostDAO {
             rs = stmt.executeQuery();
             if (rs.next()){
                 post = new PostVO();
-                post.setPostTitle("TITLE");
-                post.setPostTitle("AUTHOR");
-                post.setPostTitle("PDATE");
-                post.setPostTitle("VIEWCOUNT");
-                post.setPostTitle("PMAIN_TEXT");
+                post.setPostTitle(rs.getString("TITLE"));
+                post.setPostAuthor(rs.getString("AUTHOR"));
+                post.setPostDate(rs.getDate("PDATE"));
+                post.setPostViewCount(rs.getInt("VIEWCOUNT"));
+                post.setPostText(rs.getString("PMAIN_TEXT"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.close(stmt, conn);
         }
+        System.out.println(post.toString());
         return post;
     }
 
