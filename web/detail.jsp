@@ -70,23 +70,16 @@
 
 	<p class="login">
 		<a id="login" href="login.jsp">로그인</a> /
-		<script>
-			var id = '${sessionID}';
-			if (id == '') {
-				return false;
-			} else {
-				var str = document.getElementById("login");
-				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
-			}
-		</script>
 		<a id="regist" href="regist.jsp">회원가입</a>
 		<script>
-			var id = '${sessionID}';
+			var id = '${sessionId}'
 			if (id == '') {
-				return false;
-			} else {
+
+			}else{
+				var str = document.getElementById("login");
+				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
 				var str = document.getElementById("regist");
-				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="index.jsp">내 정보</a>';
+				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="Information.jsp">내 정보</a>';
 			}
 		</script>
 	</p>
@@ -209,14 +202,14 @@
 		</tr>
 	</div>
 	<div class="detailcontent">
-		<p>${post.postText}</p>
+		<p>${post.postText }</p>
 	</div>
 	<div class="detail">
 
 		<tr>
 			<span class="like-content">
 				<button class="btn-secondary like-review">
-					<i class="fa fa-heart" aria-hidden="true"></i></i>좋아요
+					<i class="fa fa-heart" aria-hidden="true"></i>좋아요
 				</button>
 			</span>
 
@@ -251,8 +244,8 @@
 			<span class="author">김성동</span><br>
 			<br>
 			치킨은 비비큐 황금 올리브죠
-				<span><a class="comment" href="댓글삭제.do">삭제</a></span>
-				<span><a class="comment" href="댓글수정.do">수정</a></span>
+			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
+			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
 		<p class="commentlist">
 			<span class="author">서민기</span><br>

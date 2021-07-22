@@ -141,13 +141,13 @@
 
 		//로그인 검사
 		function checkLogin() {
-			var id = '${login.memberId}';
-			alert(id);
+			var id = '${sessionId}';
 			// 수정 ''공백 비교
 			if (id == '') {
 				alert("로그인 후 글쓰기가 가능합니다.");
-				return false;
-			} else {
+				location.href = 'main.jsp';
+
+			}else {
 				location.href = 'write.jsp';
 			}
 		}
@@ -170,23 +170,16 @@
 
 	<p class="login">
 		<a id="login" href="login.jsp">로그인</a> /
-		<script>
-			var id = '';
-			if (id != '') {
-				return false;
-			} else {
-				var str = document.getElementById("login");
-				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
-			}
-		</script>
 		<a id="regist" href="regist.jsp">회원가입</a>
 		<script>
-			var id = '${sessionID}';
+			var id = '${sessionId}'
 			if (id == '') {
-				return false;
-			} else {
+
+			}else{
+				var str = document.getElementById("login");
+				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
 				var str = document.getElementById("regist");
-				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="index.jsp">내 정보</a>';
+				str.innerHTML = '<a style="color: teal;text-decoration: none;" href="Information.jsp">내 정보</a>';
 			}
 		</script>
 	</p>
@@ -326,14 +319,18 @@
 			<option>공산동</option>
 		</select>
 	</tr>
+	<tr>
+		<td class="title"><input type="text"  name="author" value="${sessionId}"
+								 placeholder="이름" style="display:none" /></td>
+	</tr>
 		<table width="100%">
 
 			<tr>
-				<td class="title"><input type="text" id="title" name="postTitle"
+				<td class="title"><input type="text" id="title" name="title"
 										 placeholder="제목을 입력하세요" style="width: 640px" /></td>
 			</tr>
 			<tr>
-				<td><textarea rows="10" cols="30" id="ir1" name="postText"
+				<td><textarea rows="10" cols="30" id="ir1" name="mainText"
 							  style="width: 650px; height: 350px;"></textarea></td>
 			</tr>
 			<tr>

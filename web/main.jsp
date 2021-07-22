@@ -18,25 +18,20 @@
         var lastScrollTop = 0;
         var delta = 5;
         var navbarHeight = $('nav').outerHeight();
-
         $(window).scroll(function(event) {
             didScroll = true;
         });
-
         setInterval(function() {
             if (didScroll) {
                 hasScrolled();
                 didScroll = false;
             }
         }, 250);
-
         function hasScrolled() {
             var st = $(this).scrollTop();
-
             // Make sure they scroll more than delta
             if (Math.abs(lastScrollTop - st) <= delta)
                 return;
-
             // If they scrolled down and are past the navbar, add class .nav-up.
             // This is necessary so you never see what is "behind" the navbar.
             if (st > lastScrollTop && st > navbarHeight) {
@@ -54,7 +49,7 @@
 </head>
 <body>
 <%
-String id_str = session.getId();
+    String id_str = session.getId();
 %>
 <header>
     <h1>
@@ -66,25 +61,15 @@ String id_str = session.getId();
     </div>
     <p class="login">
         <a id="login" href="login.jsp">로그인</a> /
-        <script>
-            var id = '${sessionID}';
-            if (id == '') {
-                var str = document.getElementById("login");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
-                return false;
-            } else if(id != ''){
-                var str = document.getElementById("login");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그인</a>';
-            }
-        </script>
         <a id="regist" href="regist.jsp">회원가입</a>
         <script>
-            var id = '${sessionID}';
+            var id = '${sessionId}'
             if (id == '') {
-                return false;
-            } else {
+            }else{
+                var str = document.getElementById("login");
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
                 var str = document.getElementById("regist");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="index.jsp">내 정보</a>';
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="Information.jsp">내 정보</a>';
             }
         </script>
     </p>
@@ -210,14 +195,14 @@ String id_str = session.getId();
         </thead>
         <tbody>
         <c:forEach items="${postList }" var="post">
-        <tr>
-            <td>${post.postId }</td>
-            <td>${post.guName } ${post.dongName }</td>
-            <td><a href="getPost.do?pid=${post.postId }">${post.postTitle }</a></td>
-            <td>${post.postAuthor }</td>
-            <td>${post.postDate }</td>
-            <td>${post.postViewCount }</td>
-        </tr>
+            <tr>
+                <td>${post.postId }</td>
+                <td>${post.guName } ${post.dongName }</td>
+                <td><a href="getPost.do?pid=${post.postId }">${post.postTitle }</a></td>
+                <td>${post.postAuthor }</td>
+                <td>${post.postDate }</td>
+                <td>${post.postViewCount }</td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
@@ -233,7 +218,7 @@ String id_str = session.getId();
         <a href="detail.jsp">글보기항목으로</a>
         <a href="logout.do">로그아웃</a>
         <a href="Information.jsp">내정보</a>
-        <a href="asd.jsp">내정보</a>
+        <a href="login.jsp">로그인</a>
     </p>
 </div>
 </body>

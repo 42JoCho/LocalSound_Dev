@@ -63,23 +63,16 @@
 
 		<p class="login">
 			<a id="login" href="login.jsp">로그인</a> /
-			<script>
-				var id = '${sessionID}';
-				if (id == '') {
-					return false;
-				} else {
-					var str = document.getElementById("login");
-					str.innerHTML = '<a style="color: teal;text-decoration: none;" href="main.jsp">로그아웃</a>';
-				}
-			</script>
 			<a id="regist" href="regist.jsp">회원가입</a>
 			<script>
-				var id = '${sessionID}';
+				var id = '${sessionId}'
 				if (id == '') {
-					return false;
-				} else {
+
+				}else{
+					var str = document.getElementById("login");
+					str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
 					var str = document.getElementById("regist");
-					str.innerHTML = '<a style="color: teal;text-decoration: none;" href="index.jsp">내 정보</a>';
+					str.innerHTML = '<a style="color: teal;text-decoration: none;" href="Information.jsp">내 정보</a>';
 				}
 			</script>
 		</p>

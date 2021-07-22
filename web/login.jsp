@@ -11,7 +11,22 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginUI.css">
 </head>
 
+<script>
+    function checkLogin() {
+        var id = '${sessionId}';
+        // 수정 ''공백 비교
+        if (id == '') {
+
+        }else{
+            alert('로그인되어있습니다.')
+            location.href = 'main.jsp';
+        }
+    }
+</script>
 <body>
+<script type="text/javascript">
+    checkLogin()
+</script>
 <div id="header">
     <a href="main.jsp" title="홈으로 돌아가기" ><img src="${pageContext.request.contextPath}/image/logo.png" id="logo"></a>
 </div>
@@ -47,6 +62,4 @@
 </div>
 
 </body>
-
-
 </html>
