@@ -96,7 +96,7 @@ public class PostVO {
 
     @Override
     public String toString() {
-        return "BoardVO{" +
+        return "PostVO{" +
                 "postId=" + postId +
                 ", postTitle='" + postTitle + '\'' +
                 ", postAuthor='" + postAuthor + '\'' +
