@@ -65,7 +65,7 @@
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">
-		<button>검색</button>
+		<button style="font-size:1rem;" ><i class="fas fa-search"></i></button>
 	</div>
 
 	<p class="login">
