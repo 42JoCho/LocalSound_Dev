@@ -86,9 +86,11 @@
 				$("#frm").submit();
 			});
 		});
+
 		function selectOnChange() { /* 구 이름 selector 변경에 따라 동 이름 selector 변경을 처리하는 함수 */
 			var guName = document.querySelector('.guName');
 			var dongName = document.querySelector('.dongName');
+
 			var guOption = guName.options[guName.selectedIndex].innerText;
 			$('.dongName').empty(); /* 구 이름이 변경되면 기존에 들어가 있던 동 이름 selector 비움 */
 			var dongOption = {
@@ -136,6 +138,33 @@
 				var option = document.createElement('option');
 				option.innerText = dongOption[i];
 				dongName.append(option)
+			}
+		}
+		/*관심사 선택*/
+		function subjectChange() {
+			var subject = document.querySelector('.subject');
+			var subject2 = document.querySelector('.subject2');
+
+			var subjectOption = subject.options[subject.selectedIndex].innerText;
+			$('.subject2').empty(); /* 구 이름이 변경되면 기존에 들어가 있던 동 이름 selector 비움 */
+			var subjectOption2 = {
+				inter : [ '맛집', '핫플', '학업', '기억안남', '잡담'],
+				problem : [ '분리수거', '공공시설', '소음', '이것도', '기타' ]
+
+			}
+			switch (subjectOption) {
+				case '관심사':
+					subjectOption2 = subjectOption2.inter;
+					break;
+				case '문제점':
+					subjectOption2 = subjectOption2.problem;
+					break;
+			}
+
+			for (var i = 0; i < subjectOption2.length; i++) {
+				var option = document.createElement('option');
+				option.innerText = subjectOption2[i];
+				subject2.append(option)
 			}
 		}
 
@@ -316,6 +345,19 @@
 			<option>혁신동</option>
 			<option>공산동</option>
 		</select>
+
+		<select class="subject" name="subject" onchange="subjectChange()">
+			<%-- 구 이름 selector, selectOnChange() 스크립트로 변화 처리 --%>
+			<option>관심사</option>
+			<option>문제점</option>
+		</select>
+		<select class="subject2" name="subject2">
+			<option>학업</option>
+			<option>맛집</option>
+			<option>핫플</option>
+			<option>기타</option>
+			<option>잡담</option>
+		</select>
 	</tr>
 	<tr>
 		<td class="title"><input type="text"  name="author" value="${sessionId}"
@@ -333,10 +375,11 @@
 			</tr>
 			<tr>
 				<td colspan="2"><input type="button" class="del" id="save" value="등록" /></td>
-			<td><button href="main.jsp">취소</button></td>
 		</tr>
+			<td><a href="main.jsp">취소</a></td>
 		</table>
 </div>
 </form>
+
 </body>
 </html>
