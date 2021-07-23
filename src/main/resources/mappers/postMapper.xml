@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PostDAO">
+    <insert id="insertPost">
+        insert into mysql.post(title, author, pmain_text, gu_name, dong_name)
+        values (#{postTitle}, #{postAuthor}, #{postText}, #{guName}, #{dongName})
+    </insert>
+    <update id="updatePost">
+        update mysql.post
+        set title=#{postTitle},
+            pmain_text=#{postText},
+            gu_name=#{guName},
+            dong_name=#{dongName}
+        where pid = #{postId}
+    </update>
+    <delete id="deletePost">
+        delete
+        from mysql.post
+        where pid = #{postId}
+    </delete>
+    <resultMap id="postList" type="com.bbgg_dev.post.PostVO">
+        <result property="postId" column="PID"/>
+        <result property="postTitle" column="TITLE" />
+        <result property="postAuthor" column="AUTHOR" />
+        <result property="postDate" column="PDATE" />
+        <result property="postViewCount" column="VIEWCOUNT" />
+        <result property="postText" column="PMAIN_TEXT" />
+        <result property="guName" column="GU_NAME" />
+        <result property="dongName" column="DONG_NAME" />
+    </resultMap>
+    <select id="getPost" resultType="post" resultMap="postList">
+        select title, author, pdate, viewcount, pmain_text
+        from mysql.post
+        where pid = #{postId}
+    </select>
+    <select id="getPostList" resultType="post" resultMap="postList">
+        <![CDATA[
+            SELECT *
+            FROM mysql.post
+            WHERE (PMAIN_TEXT LIKE '%#{searchKeyword}%'
+                       OR TITLE LIKE '%#{searchKeyword}%')
+            ORDER BY PID DESC
+        ]]>
+    </select>
+</mapper>

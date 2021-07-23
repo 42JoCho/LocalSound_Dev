@@ -1,25 +1,26 @@
 package com.bbgg_dev.post;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
-
+import com.bbgg_dev.post.Impl.PostDAO;
+import com.bbgg_dev.post.PostVO;
 import java.util.List;
 
 public class PostServiceClient {
 
     public static void main(String[] args) {
 
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
-
-        PostService postService = (PostService) container.getBean("postService");
-        // 글 등록
+        PostDAO postDAO = new PostDAO();
         PostVO vo = new PostVO();
 
-        // 글 목록 검색
-        List<PostVO> postList = postService.getPostList(vo);
-        for (PostVO post : postList)
-            System.out.println("---> " + post.toString());
+        vo.setPostTitle("제목 2");
+        vo.setPostAuthor("작성자 2");
+        vo.setPostText("글 2의 내용");
+        vo.setGuName("구이름");
+        vo.setDongName("동이름");
+        postDAO.insertPost(vo);
 
-        container.close();
+        List<PostVO> postList = postDAO.getPostList(vo);
+        for(PostVO post : postList){
+            System.out.println("---->"+post.toString());
+        }
     }
 }

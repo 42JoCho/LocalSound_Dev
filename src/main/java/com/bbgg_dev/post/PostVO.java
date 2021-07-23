@@ -11,16 +11,7 @@ public class PostVO {
     private String postText;
     private String guName;
     private String dongName;
-    private String searchCondition;
     private String searchKeyword;
-
-    public String getSearchCondition() {
-        return searchCondition;
-    }
-
-    public void setSearchCondition(String searchCondition) {
-        this.searchCondition = searchCondition;
-    }
 
     public String getSearchKeyword() {
         return searchKeyword;
@@ -96,7 +87,7 @@ public class PostVO {
 
     @Override
     public String toString() {
-        return "BoardVO{" +
+        return "PostVO{" +
                 "postId=" + postId +
                 ", postTitle='" + postTitle + '\'' +
                 ", postAuthor='" + postAuthor + '\'' +

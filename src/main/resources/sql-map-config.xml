@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--Alias 설정-->
+    <typeAliases>
+        <typeAlias alias="login" type="com.bbgg_dev.login.LoginVO"/>
+        <typeAlias alias="signUp" type="com.bbgg_dev.sign_up.SignUpVO"/>
+        <typeAlias alias="post" type="com.bbgg_dev.post.PostVO"/>
+        <typeAlias alias="comment" type="com.bbgg_dev.comment.CommentVO"/>
+    </typeAliases>
+
+    <!--DataSource 설정-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--SQL Mapper 설정-->
+    <mappers>
+<!--        <mapper resource="mappers/loginMapper.xml"/>
+        <mapper resource="mappers/signupMapper.xml"/>-->
+        <mapper resource="mappers/postMapper.xml"/>
+  <!--      <mapper resource="mappers/commentMapper.xml"/>-->
+    </mappers>
+</configuration>
