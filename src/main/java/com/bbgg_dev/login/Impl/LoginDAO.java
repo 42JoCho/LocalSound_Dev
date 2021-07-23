@@ -1,6 +1,5 @@
 package com.bbgg_dev.login.Impl;
 
-import com.bbgg_dev.common.JDBCUtil;
 import com.bbgg_dev.login.LoginVO;
 import org.springframework.stereotype.Repository;
 

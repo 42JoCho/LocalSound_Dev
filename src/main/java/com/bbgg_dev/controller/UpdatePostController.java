@@ -16,6 +16,8 @@ public class UpdatePostController  {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 수정 처리");
 
+    // 글 수정 페이지에서 수정완료 버튼 클릭시 작동
+
         try {
             // 1. 사용자 입력 정보 추출
             int pid = Integer.parseInt(request.getParameter("pid"));
@@ -23,6 +25,7 @@ public class UpdatePostController  {
             String maintext = request.getParameter("mainText");
             String guName = request.getParameter("guName");
             String dongName = request.getParameter("dongName");
+
 
             // 2. DB 연동 처리
             PostVO vo = new PostVO();
