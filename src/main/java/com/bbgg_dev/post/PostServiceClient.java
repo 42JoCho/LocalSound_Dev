@@ -11,13 +11,13 @@ public class PostServiceClient {
         PostDAO postDAO = new PostDAO();
         PostVO vo = new PostVO();
 
-        vo.setPostTitle("제목 2");
-        vo.setPostAuthor("작성자 2");
-        vo.setPostText("글 2의 내용");
-        vo.setGuName("구이름");
-        vo.setDongName("동이름");
+        vo.setPostId(10);
+        vo.setPostTitle("제목 123");
+        vo.setPostAuthor("작성자 123");
+        vo.setPostText("글 123의 내용");
+        vo.setGuName("구123");
+        vo.setDongName("동123");
         postDAO.insertPost(vo);
-
         List<PostVO> postList = postDAO.getPostList(vo);
         for(PostVO post : postList){
             System.out.println("---->"+post.toString());

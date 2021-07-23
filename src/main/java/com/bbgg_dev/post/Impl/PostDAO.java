@@ -1,6 +1,5 @@
 package com.bbgg_dev.post.Impl;
 
-import com.bbgg_dev.common.JDBCUtil;
 import com.bbgg_dev.common.SqlSessionFactoryBean;
 import com.bbgg_dev.post.PostVO;
 import org.apache.ibatis.session.SqlSession;
@@ -12,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-// 검색 기능 백엔드 작업할것.
 
 @Repository("postDAO")
 public class PostDAO {
@@ -35,6 +32,11 @@ public class PostDAO {
 
     public void updateViewCount(PostVO vo) {
         mybatis.update("PostDAO.updateViewCount", vo);
+        mybatis.commit();
+    }
+
+    public void updateRecoCount(PostVO vo){
+        mybatis.update("PostDAO.updateRecoCount", vo);
         mybatis.commit();
     }
 

@@ -12,6 +12,6 @@
         <result property="memeberEmail" column="EMAIL" />
     </resultMap>
     <select id="checkUser" resultType="login" resultMap="userInfo">
-        select * from mysql.member where id=#{memberId} and pw=#{memberPassword}
+        select * from ebdb.MEMBER where id=#{memberId} and pw=#{memberPassword}
     </select>
 </mapper>
