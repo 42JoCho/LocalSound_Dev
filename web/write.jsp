@@ -193,7 +193,7 @@
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">
-		<button style="font-size:1rem;" ><i class="fas fa-search"></i></button>
+		<button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
 	</div>
 
 	<p class="login">
