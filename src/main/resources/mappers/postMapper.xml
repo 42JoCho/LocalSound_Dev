@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PostDAO">
     <insert id="insertPost">
-        insert into mysql.post(title, author, pmain_text, gu_name, dong_name)
+        insert into ebdb.POST(title, author, pmain_text, gu_name, dong_name)
         values (#{postTitle}, #{postAuthor}, #{postText}, #{guName}, #{dongName})
     </insert>
     <update id="updatePost">
-        update mysql.post
+        update ebdb.POST
         set title=#{postTitle},
             pmain_text=#{postText},
             gu_name=#{guName},
@@ -16,12 +16,16 @@
         where pid = #{postId}
     </update>
     <update id="updateViewCount">
-        update mysql.post
+        update ebdb.POST
         set viewcount = viewcount + 1 where pid=#{postId}
+    </update>
+    <update id="updateRecordCount">
+        update ebdb.POST
+        set
     </update>
     <delete id="deletePost">
         delete
-        from mysql.post
+        from ebdb.POST
         where pid = #{postId}
     </delete>
     <resultMap id="postList" type="com.bbgg_dev.post.PostVO">
@@ -35,16 +39,16 @@
         <result property="dongName" column="DONG_NAME" />
     </resultMap>
     <select id="getPost" resultType="post" resultMap="postList">
-        select title, author, pdate, viewcount, pmain_text
-        from mysql.post
+        select *
+        from ebdb.POST
         where pid = #{postId}
     </select>
     <select id="getPostList" resultType="post" resultMap="postList">
         select *
-        from mysql.post
+        from ebdb.POST
         order by pid
     </select>
     <select id="getPostByAuthor" resultType="post" resultMap="postList">
-        select * from mysql.post where author like #{postAuthor};
+        select * from ebdb.POST where author like #{postAuthor};
     </select>
 </mapper>
