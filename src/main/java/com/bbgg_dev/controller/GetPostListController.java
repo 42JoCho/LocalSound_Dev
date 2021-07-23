@@ -28,6 +28,10 @@ public class GetPostListController  {
         PostDAO postDAO = new PostDAO();
         List<PostVO> postList = postDAO.getPostList(vo);
 
+        // 3. 검색 결과를 세션에 저장하고 목록 화면 리턴
+        HttpSession session = request.getSession();
+        session.setAttribute("postList", postList);
+
         // 3. 검색 결과와 화면 정보를 ModelAndView 저장, 목록 화면 리턴
         ModelAndView mav = new ModelAndView();
         mav.addObject("postList", postList);
