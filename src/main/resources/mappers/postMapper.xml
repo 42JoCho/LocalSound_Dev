@@ -42,7 +42,7 @@
     <select id="getPostList" resultType="post" resultMap="postList">
         select *
         from mysql.post
-        order by pid
+        order by pid desc
     </select>
     <select id="getPostByAuthor" resultType="post" resultMap="postList">
         select * from mysql.post where author like #{postAuthor};
