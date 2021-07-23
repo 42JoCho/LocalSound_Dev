@@ -22,5 +22,11 @@ public class PostServiceClient {
         for(PostVO post : postList){
             System.out.println("---->"+post.toString());
         }
+
+        vo.setPostAuthor("mingiseo");
+        List<PostVO> postListbyAuthor = postDAO.getPostByAuthor(vo);
+        for(PostVO pauth : postListbyAuthor){
+            System.out.println("---->"+pauth.toString());
+        }
     }
 }

@@ -15,6 +15,10 @@
             dong_name=#{dongName}
         where pid = #{postId}
     </update>
+    <update id="updateViewCount">
+        update mysql.post
+        set viewcount = viewcount + 1 where pid=#{postId}
+    </update>
     <delete id="deletePost">
         delete
         from mysql.post
@@ -39,5 +43,8 @@
         select *
         from mysql.post
         order by pid
+    </select>
+    <select id="getPostByAuthor" resultType="post" resultMap="postList">
+        select * from mysql.post where author like #{postAuthor};
     </select>
 </mapper>

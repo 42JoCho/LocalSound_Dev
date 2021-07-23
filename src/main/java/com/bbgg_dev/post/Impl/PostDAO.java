@@ -33,6 +33,11 @@ public class PostDAO {
         mybatis.commit();
     }
 
+    public void updateViewCount(PostVO vo) {
+        mybatis.update("PostDAO.updateViewCount", vo);
+        mybatis.commit();
+    }
+
     public void deletePost(PostVO vo) {
         mybatis.delete("PostDAO.deletePost", vo);
         mybatis.commit();
@@ -40,6 +45,10 @@ public class PostDAO {
 
     public PostVO getPost(PostVO vo) {
         return mybatis.selectOne("PostDAO.getPost", vo);
+    }
+
+    public List<PostVO> getPostByAuthor(PostVO vo) {
+        return mybatis.selectList("PostDAO.getPostByAuthor", vo);
     }
 
     public List<PostVO> getPostList(PostVO vo) {

@@ -3,11 +3,11 @@ package com.bbgg_dev.sign_up;
 public interface SignUpService {
     void insertMember(SignUpVO vo);
 
-    void deleteMember(String id);
+    void deleteMember(SignUpVO vo);
 
-    String findId(String email);
+    SignUpVO findId(SignUpVO vo);
 
-    String findPassword(String id);
+    SignUpVO findPassword(SignUpVO vo);
 
-    boolean idCheck(String id);
+    SignUpVO idCheck(SignUpVO vo);
 }

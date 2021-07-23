@@ -1,9 +1,38 @@
 package com.bbgg_dev.login;
 
+import java.sql.Date;
+
 public class LoginVO {
     private String memberId;
     private String memberPassword;
     private String memberName;
+    private char memberGender;
+    private Date memberBirth;
+    private String memeberEmail;
+
+    public char getMemberGender() {
+        return memberGender;
+    }
+
+    public void setMemberGender(char memberGender) {
+        this.memberGender = memberGender;
+    }
+
+    public Date getMemberBirth() {
+        return memberBirth;
+    }
+
+    public void setMemberBirth(Date memberBirth) {
+        this.memberBirth = memberBirth;
+    }
+
+    public String getMemeberEmail() {
+        return memeberEmail;
+    }
+
+    public void setMemeberEmail(String memeberEmail) {
+        this.memeberEmail = memeberEmail;
+    }
 
     public String getMemberId() {
         return memberId;
@@ -33,7 +62,11 @@ public class LoginVO {
     public String toString() {
         return "LoginVO{" +
                 "memberId='" + memberId + '\'' +
-                ", memberPw='" + memberPassword + '\'' +
+                ", memberPassword='" + memberPassword + '\'' +
+                ", memberName='" + memberName + '\'' +
+                ", memberGender=" + memberGender +
+                ", memberBirth=" + memberBirth +
+                ", memeberEmail='" + memeberEmail + '\'' +
                 '}';
     }
 }

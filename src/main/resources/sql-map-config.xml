@@ -27,9 +27,9 @@
 
     <!--SQL Mapper 설정-->
     <mappers>
-<!--        <mapper resource="mappers/loginMapper.xml"/>
-        <mapper resource="mappers/signupMapper.xml"/>-->
+        <mapper resource="mappers/logonMapper.xml"/>
+        <mapper resource="mappers/signupMapper.xml"/>
         <mapper resource="mappers/postMapper.xml"/>
-  <!--      <mapper resource="mappers/commentMapper.xml"/>-->
+        <mapper resource="mappers/cmtMapper.xml"/>
     </mappers>
 </configuration>

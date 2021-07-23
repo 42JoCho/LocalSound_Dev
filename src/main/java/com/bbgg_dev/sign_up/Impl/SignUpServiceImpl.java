@@ -18,24 +18,23 @@ public class SignUpServiceImpl implements SignUpService {
     }
 
     @Override
-    public void deleteMember(String id) {
-        signUpDAO.deleteMember(id);
+    public void deleteMember(SignUpVO vo) {
+        signUpDAO.deleteMember(vo);
     }
 
     @Override
-    public String findId(String email) {
-
-        return signUpDAO.findId(email);
+    public SignUpVO findId(SignUpVO vo) {
+        return signUpDAO.findId(vo);
     }
 
     @Override
-    public String findPassword(String id) {
-        return signUpDAO.findPassword(id);
+    public SignUpVO findPassword(SignUpVO vo) {
+        return signUpDAO.findPassword(vo);
     }
 
     @Override
-    public boolean idCheck(String id) {
-        return signUpDAO.idCheck(id);
+    public SignUpVO idCheck(SignUpVO vo) {
+        return signUpDAO.idCheck(vo);
     }
 
 
