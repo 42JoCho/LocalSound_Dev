@@ -18,6 +18,7 @@ public class UpdatePostController  {
 
         try {
             // 1. 사용자 입력 정보 추출
+            int pid = Integer.parseInt(request.getParameter("pid"));
             String title = request.getParameter("title");
             String maintext = request.getParameter("mainText");
             String guName = request.getParameter("guName");
@@ -25,6 +26,7 @@ public class UpdatePostController  {
 
             // 2. DB 연동 처리
             PostVO vo = new PostVO();
+            vo.setPostId(pid);
             vo.setPostTitle(title);
             vo.setPostText(maintext);
             vo.setGuName(guName);

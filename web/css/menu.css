@@ -51,7 +51,7 @@ header {
 }
 /*로고*/
 /*화면작아지면 로고 감추기*/
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1200px) {
 	h1 {
 		display: none;
 	}
@@ -68,7 +68,7 @@ h1>a {
 }
 /*로그인*/
 /*화면작아지면 로그인 감추기*/
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1200px) {
 	.login {
 		display: none;
 	}

@@ -318,7 +318,8 @@
 	</ul>
 </nav>
 </script>
-<form id="frm" action="updatePost.do" method="post">
+<form id="frm" action="updatePost.do?pid=${post.postId }" method="post">
+	<input name="pid" value="${post.postId }"/>
 	<div class="middle">
 		<tr>
 			<select class="guName" name="guName" onchange="selectOnChange()">

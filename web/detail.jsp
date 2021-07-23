@@ -227,6 +227,7 @@
 
 			<td>
 				<form action="deletePost.do" method="post" id="del">
+					<input name="pid" type="hidden" value="${post.postId }"/>
 					<button class="next" >삭제</button>
 				</form>
 			</td>
