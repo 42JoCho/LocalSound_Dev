@@ -10,6 +10,7 @@
 	<title>SmartEditor</title>
 	<link rel="stylesheet"
 		  href=" ${pageContext.request.contextPath}/css/menu.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" />
 	<style>
 		div.middle {
 			width: 650px;
@@ -148,8 +149,8 @@
 			var subjectOption = subject.options[subject.selectedIndex].innerText;
 			$('.subject2').empty(); /* 구 이름이 변경되면 기존에 들어가 있던 동 이름 selector 비움 */
 			var subjectOption2 = {
-				inter : [ '맛집', '핫플', '학업', '기억안남', '잡담'],
-				problem : [ '분리수거', '공공시설', '소음', '이것도', '기타' ]
+				inter : [ '맛집', '취미', '명물', '교육', '잡담'],
+				problem : [  '공공시설', '쓰레기', '도로파손', '주차', '외부소음' ]
 
 			}
 			switch (subjectOption) {
@@ -192,7 +193,7 @@
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">
-		<button>검색</button>
+		<button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
 	</div>
 
 	<p class="login">
@@ -352,10 +353,10 @@
 			<option>문제점</option>
 		</select>
 		<select class="subject2" name="subject2">
-			<option>학업</option>
 			<option>맛집</option>
-			<option>핫플</option>
-			<option>기타</option>
+			<option>취미</option>
+			<option>명물</option>
+			<option>교육</option>
 			<option>잡담</option>
 		</select>
 	</tr>
@@ -374,9 +375,8 @@
 							  style="width: 650px; height: 350px;"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="button" class="del" id="save" value="등록" /></td>
-		</tr>
-			<td><a href="main.jsp">취소</a></td>
+				<td colspan="2"><input type="button" class="del" id="save" value="등록" /><a href="main.jsp">취소</a></td>
+			</tr>
 		</table>
 </div>
 </form>

@@ -11,6 +11,7 @@
           href="${pageContext.request.contextPath}/css/menu.css">
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/css/content.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" />
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript">
@@ -57,7 +58,7 @@
     </h1>
     <div class="search">
         <input type="text" placeholder="검색어 입력">
-        <button>검색</button>
+        <button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
     </div>
     <p class="login">
         <a id="login" href="login.jsp">로그인</a> /
@@ -217,6 +218,7 @@
         <a href="index.jsp">처음화면으로</a>
         <a href="UpdatePost.jsp">수정</a>
         <a href="login.jsp">로그인</a>
+        <a href="Information1.jsp">테스트</a>
     </p>
 </div>
 </body>

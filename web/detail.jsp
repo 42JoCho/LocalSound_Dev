@@ -65,7 +65,7 @@
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">
-		<button>검색</button>
+		<button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
 	</div>
 
 	<p class="login">
@@ -251,15 +251,13 @@
 	</div>
 	<div>
 		<p class="commentcount">댓글1</p>
-		<c:forEach items="${postList }" var="post">
 		<p class="commentlist">
-			<span class="author">${comment.commentAuthor}</span><br>
+			<span class="author">김성동</span><br>
 			<br>
-			${comment.commentText}
+			테스트
 			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
 			<span><a class="comment" href="댓글수정.do">수정</a></span>
 		</p>
-		</c:forEach>
 	</div>
 </div>
 </body>
