@@ -46,22 +46,22 @@
         from ebdb.POST
         where pid = #{postId}
     </select>
-    <select id="getPostList">
+    <select id="getPostList" resultMap="postList">
         select *
         from ebdb.POST
         order by pid desc
     </select>
-    <select id="getPostByAuthor" resultType="post">
+    <select id="getPostByAuthor" resultType="post" resultMap="postList">
         select *
         from ebdb.POST
         where author like #{postAuthor};
     </select>
-    <select id="getPostByRecoCount" resultType="post">
+    <select id="getPostByRecoCount" resultType="post" resultMap="postList">
         select *
         from ebdb.POST
         order by RECO_COUNT desc
     </select>
-    <select id="getPostByViewCount" resultType="post">
+    <select id="getPostByViewCount" resultType="post" resultMap="postList">
         select *
         from ebdb.POST
         order by VIEWCOUNT desc

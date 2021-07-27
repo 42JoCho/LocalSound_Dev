@@ -26,7 +26,7 @@ public class SignUpController {
         char gender = request.getParameter("gender").charAt(0);
         String email = request.getParameter("email");
 
-
+        System.out.println(birth);
         // 2. id 중복체크
         SignUpDAO signUpDAO = new SignUpDAO();
         SignUpVO vo = new SignUpVO();

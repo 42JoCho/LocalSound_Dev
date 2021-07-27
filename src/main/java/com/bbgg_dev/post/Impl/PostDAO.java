@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository("postDAO")
+@Repository("PostDAO")
 public class PostDAO {
     private SqlSession mybatis;
 
