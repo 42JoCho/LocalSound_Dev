@@ -361,8 +361,7 @@
 		</select>
 	</tr>
 	<tr>
-		<td class="title"><input type="hidden"  name="author" value="${sessionId}"
-								 placeholder="이름"/></td>
+		<input name="author" type="hidden" value="${sessionId}"/>
 	</tr>
 		<table width="100%">
 

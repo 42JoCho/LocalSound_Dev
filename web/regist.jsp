@@ -33,6 +33,7 @@
 </div>
 <!-- wrapper -->
 <form action="signup.do" method="post">
+
 <div id="wrapper">
         <div id="content">
 
