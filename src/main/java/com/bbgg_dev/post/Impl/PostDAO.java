@@ -5,11 +5,6 @@ import com.bbgg_dev.post.PostVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository("postDAO")
@@ -35,7 +30,7 @@ public class PostDAO {
         mybatis.commit();
     }
 
-    public void updateRecoCount(PostVO vo){
+    public void updateRecoCount(PostVO vo) {
         mybatis.update("PostDAO.updateRecoCount", vo);
         mybatis.commit();
     }
