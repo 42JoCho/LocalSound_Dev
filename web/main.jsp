@@ -53,13 +53,16 @@
     String id_str = session.getId();
 %>
 <header>
+
     <h1>
         <a href="main.jsp">방방곡곡</a>
     </h1>
-    <div class="search">
+    <form class="search" method="post" action="searchPost.do">
+
         <input type="text" placeholder="검색어 입력">
         <button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
-    </div>
+
+    </form>
     <p class="login">
         <a id="login" href="login.jsp">로그인</a> /
         <a id="regist" href="regist.jsp">회원가입</a>
@@ -76,8 +79,9 @@
     </p>
 </header>
 <nav>
+    <div class="dropmenu">
     <ul id="main_menu">
-        <li><a href="#home">동구</a>
+        <li><a href="main_east.jsp">동구</a>
             <ul id="sub_menu">
                 <li><a href="#home">신암동</a></li>
                 <li><a href="#home">신천동</a></li>
@@ -92,7 +96,7 @@
                 <li><a href="#home">혁신동</a></li>
                 <li><a href="#home">공산동</a></li>
             </ul></li>
-        <li><a href="#home">북구</a>
+        <li><a href="main_north.jsp">북구</a>
             <ul id="sub_menu">
                 <li><a href="#home">고성동</a></li>
                 <li><a href="#home">칠성동</a></li>
@@ -111,7 +115,7 @@
                 <li><a href="#home">노원동</a></li>
                 <li><a href="#home">국우동</a></li>
             </ul></li>
-        <li><a href="#home">서구</a>
+        <li><a href="main_west.jsp">서구</a>
             <ul id="sub_menu">
                 <li><a href="#home">내당동</a></li>
                 <li><a href="#home">비산동</a></li>
@@ -119,7 +123,7 @@
                 <li><a href="#home">상중이동</a></li>
                 <li><a href="#home">원대동</a></li>
             </ul></li>
-        <li><a href="#home">중구</a>
+        <li><a href="main_mid.jsp">중구</a>
             <ul id="sub_menu">
                 <li><a href="#home">동인동</a></li>
                 <li><a href="#home">삼덕동</a></li>
@@ -128,13 +132,13 @@
                 <li><a href="#home">남산동</a></li>
                 <li><a href="#home">대봉동</a></li>
             </ul></li>
-        <li><a href="#home">남구</a>
+        <li><a href="main_south.jsp">남구</a>
             <ul id="sub_menu">
                 <li><a href="#home">이천동</a></li>
                 <li><a href="#home">봉덕동</a></li>
                 <li><a href="#home">대명동</a></li>
             </ul></li>
-        <li><a href="#home">수성구</a>
+        <li><a href="main_suseong.jsp">수성구</a>
             <ul id="sub_menu">
                 <li><a href="#home">범어동</a></li>
                 <li><a href="#home">만촌동</a></li>
@@ -148,7 +152,7 @@
                 <li><a href="#home">범물동</a></li>
                 <li><a href="#home">고산동</a></li>
             </ul></li>
-        <li><a href="#home">달서구</a>
+        <li><a href="main_dalseo.jsp">달서구</a>
             <ul id="sub_menu">
                 <li><a href="#home">성당동</a></li>
                 <li><a href="#home">두류동</a></li>
@@ -166,7 +170,7 @@
                 <li><a href="#home">송현동</a></li>
                 <li><a href="#home">본동</a></li>
             </ul></li>
-        <li><a href="#home">달성군</a>
+        <li><a href="main_dalseong.jsp">달성군</a>
             <ul id="sub_menu">
                 <li><a href="#home">화원읍</a></li>
                 <li><a href="#home">논공읍</a></li>
@@ -179,7 +183,13 @@
                 <li><a href="#home">구지면</a></li>
             </ul></li>
     </ul>
+    </div>
 </nav>
+<script type="text/javascript">
+    $(".dropmenu ul li").hover(function(){
+        $(this).find("ul").stop().fadeToggle(300);
+    });
+</script>
 
 <div class="content">
     <table cellpadding="18" cellspacing="0">

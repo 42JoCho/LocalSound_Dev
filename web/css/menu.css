@@ -147,6 +147,7 @@ nav {
 }
 
 #main_menu>li {
+	width:135px;
 	display: inline-block;
 }
 
@@ -166,7 +167,7 @@ nav {
 	padding: 0;
 	list-style-type: none;
 	position: absolute;
-	background: rgb(250, 250, 250);
+	background: rgb(255, 255, 255);
 	opacity: 0;
 	visibility: hidden;
 	width:auto;
@@ -174,9 +175,10 @@ nav {
 }
 
 #sub_menu>li {
-	float: left;
+	height:20px;
+	width:97px;
 	padding: 6px 18px;
-	border-style: solid;
+	border-bottom: solid;
 	border-color: teal;
 	border-width: 1px;
 }
@@ -227,3 +229,5 @@ div.content>img {
 	padding: 10px;
 	text-align: center;
 }
+.dropmenu ul ul{position: absolute; display: none;}
+.dropmenu ul li a:hover{box-shadow:1px 1px 20px #ddd;}
