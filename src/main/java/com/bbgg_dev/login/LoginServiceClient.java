@@ -10,10 +10,11 @@ public class LoginServiceClient {
         LoginDAO loginDAO = new LoginDAO();
         LoginVO vo = new LoginVO();
 
-        vo.setMemberId("root");
-        vo.setMemberPassword("1234");
+        vo.setMemberId("test");
+        vo.setMemberPassword("12345");
 
         LoginVO user = loginDAO.checkUser(vo);
+        System.out.println(vo);
         if (user != null)
             System.out.println(user.getMemberName() + " 님 로그인 성공!");
         else

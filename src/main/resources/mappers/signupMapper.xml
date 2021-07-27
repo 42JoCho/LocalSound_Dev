@@ -4,19 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SignUpDAO">
     <insert id="insertMember">
-        insert into mysql.member(id, pw, name, gender, birth, email)
+        insert into ebdb.MEMBER(id, pw, name, gender, birth, email)
         values (#{id}, #{pw}, #{name}, #{gender}, #{birth}, #{email})
     </insert>
     <delete id="deleteMember">
-        delete from mysql.member where id=#{id}
+        delete from ebdb.MEMBER where id=#{id}
     </delete>
     <select id="findId" resultType="signUp">
-        select id from mysql.member where email=#{email}
+        select id from ebdb.MEMBER where email=#{email}
     </select>
     <select id="findPassword" resultType="signUp">
-        select pw from mysql.member where id=#{id}
+        select pw from ebdb.MEMBER where id=#{id}
     </select>
     <select id="idCheck" resultType="signUp">
-        select * from mysql.member where id=#{id}
+        select * from ebdb.MEMBER where id=#{id}
     </select>
 </mapper>

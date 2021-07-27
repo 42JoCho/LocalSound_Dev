@@ -2,6 +2,26 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cmtMapper">
+<mapper namespace="CommentDAO">
 
+    <insert id="insertComment">
+        insert into ebdb.COMMENT(author, cmain_text)
+        values (#{author}, #{cmain_text})
+    </insert>
+    <delete id="deleteComment">
+        delete from ebdb.COMMENT where cid=#{cid}
+    </delete>
+    <update id="updateComment">
+        update ebdb.COMMENT set cmain_text=#{cmain_text} where cid=#{cid}
+    </update>
+    <resultMap id="commentList" type="com.bbgg_dev.comment.CommentVO">
+        <result property="postId" column="PID"/>
+        <result property="commentId" column="CID"/>
+        <result property="commentDate" column="CDATE"/>
+        <result property="commentAuthor" column="AUTHOR"/>
+        <result property="commentText" column="CMAIN_TEXT"/>
+    </resultMap>
+    <select id="getComment" resultType="comment" resultMap="commentList">
+
+    </select>
 </mapper>

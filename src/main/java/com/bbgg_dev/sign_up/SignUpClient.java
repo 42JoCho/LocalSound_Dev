@@ -12,13 +12,13 @@ public class SignUpClient {
         SignUpDAO signUpDAO = new SignUpDAO();
         SignUpVO vo = new SignUpVO();
 
-/*        vo.setId("smki001");
+        vo.setId("smki001");
         vo.setPw("alsrl008");
         vo.setName("choiKim");
         vo.setGender('M');
         vo.setBirth(java.sql.Date.valueOf("1997-09-11"));
         vo.setEmail("seomingi52@gmail.com");
-        signUpDAO.insertMember(vo);*/
+        signUpDAO.insertMember(vo);
 
         vo.setEmail("seomingi52@gmail.com");
         signUpDAO.findId(vo);

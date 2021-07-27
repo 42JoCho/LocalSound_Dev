@@ -21,6 +21,7 @@ public class LoginController {
         String pw = request.getParameter("pw");
 
         LoginVO vo = new LoginVO();
+        System.out.println(vo);
         vo.setMemberId(id);
         vo.setMemberPassword(pw);
 
@@ -34,7 +35,6 @@ public class LoginController {
         if (user != null) {
             loginSuccess = user.getMemberName();
             session.setAttribute("sessionId", loginSuccess);
-            System.out.println("세선 id : " + loginSuccess);
             mav.setViewName("redirect:getPostList.do");
         } else {
             session.setAttribute("sessionId", loginSuccess);

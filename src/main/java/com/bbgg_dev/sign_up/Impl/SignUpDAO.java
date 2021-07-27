@@ -4,7 +4,6 @@ import com.bbgg_dev.common.SqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.bbgg_dev.sign_up.SignUpVO;
-import com.bbgg_dev.common.JDBCUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

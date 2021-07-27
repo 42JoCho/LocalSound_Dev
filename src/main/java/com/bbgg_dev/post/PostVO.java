@@ -8,10 +8,37 @@ public class PostVO {
     private String postAuthor;
     private Date postDate;
     private int postViewCount;
+    private int postRecoCount;
     private String postText;
     private String guName;
     private String dongName;
     private String searchKeyword;
+    private String PostMainCategory;
+    private String PostSubCategory;
+
+    public int getPostRecoCount() {
+        return postRecoCount;
+    }
+
+    public void setPostRecoCount(int postRecoCount) {
+        this.postRecoCount = postRecoCount;
+    }
+
+    public String getPostMainCategory() {
+        return PostMainCategory;
+    }
+
+    public void setPostMainCategory(String postMainCategory) {
+        PostMainCategory = postMainCategory;
+    }
+
+    public String getPostSubCategory() {
+        return PostSubCategory;
+    }
+
+    public void setPostSubCategory(String postSubCategory) {
+        PostSubCategory = postSubCategory;
+    }
 
     public String getSearchKeyword() {
         return searchKeyword;
@@ -93,9 +120,13 @@ public class PostVO {
                 ", postAuthor='" + postAuthor + '\'' +
                 ", postDate=" + postDate +
                 ", postViewCount=" + postViewCount +
+                ", postRecoCount=" + postRecoCount +
                 ", postText='" + postText + '\'' +
                 ", guName='" + guName + '\'' +
                 ", dongName='" + dongName + '\'' +
+                ", searchKeyword='" + searchKeyword + '\'' +
+                ", PostMainCategory='" + PostMainCategory + '\'' +
+                ", PostSubCategory='" + PostSubCategory + '\'' +
                 '}';
     }
 }

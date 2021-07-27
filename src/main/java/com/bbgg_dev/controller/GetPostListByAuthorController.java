@@ -12,22 +12,22 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-public class GetPostListController {
+public class GetPostListByAuthorController {
 
-    @RequestMapping(value = "/getPostList.do")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("글 목록 검색 처리");
+    @RequestMapping(value = "/getPostListByAuthor.do")
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response){
 
-        // 2. DB 연동 처리
+        String author = request.getParameter("author");
+
+        PostVO vo = new PostVO();
+        vo.setPostAuthor(author);
 
         PostDAO postDAO = new PostDAO();
-        List<PostVO> postList = postDAO.getPostList();
+        List<PostVO> postList = postDAO.getPostByAuthor(vo);
 
-        // 3. 검색 결과를 세션에 저장하고 목록 화면 리턴
         HttpSession session = request.getSession();
         session.setAttribute("postList", postList);
 
-        // 3. 검색 결과와 화면 정보를 ModelAndView 저장, 목록 화면 리턴
         ModelAndView mav = new ModelAndView();
         mav.addObject("postList", postList);
         mav.setViewName("/main.jsp");

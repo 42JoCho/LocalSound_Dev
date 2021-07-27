@@ -14,10 +14,6 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private LoginDAO loginDAO;
 
-    public void setLoginDAO(LoginDAO loginDAO) {
-        this.loginDAO = loginDAO;
-    }
-
     @Override
     public LoginVO checkLogin(LoginVO vo) {
         return loginDAO.checkUser(vo);

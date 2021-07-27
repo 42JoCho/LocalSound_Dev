@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="loginDAO">
+<mapper namespace="LoginDAO">
     <resultMap id="userInfo" type="com.bbgg_dev.login.LoginVO">
         <result property="memberId" column="ID"/>
         <result property="memberPassword" column="PW" />
@@ -12,6 +12,6 @@
         <result property="memeberEmail" column="EMAIL" />
     </resultMap>
     <select id="checkUser" resultType="login" resultMap="userInfo">
-        select * from mysql.member where id=#{memberId} and pw=#{memberPassword}
+        select * from ebdb.MEMBER where id=#{memberId} and pw=#{memberPassword}
     </select>
 </mapper>
