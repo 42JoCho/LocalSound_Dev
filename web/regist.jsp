@@ -85,14 +85,14 @@
                     <!-- BIRTH_YY -->
                     <div id="bir_yy">
                             <span class="box">
-                                <input name="birth" type="text" id="yy" class="int"  maxlength="4" placeholder="년(4자)">
+                                <input name="year" type="text" id="yy" class="int"  maxlength="4" placeholder="년(4자)">
                             </span>
                     </div>
 
                     <!-- BIRTH_MM -->
                     <div id="bir_mm" name="birth">
                             <span class="box">
-                                <select id="mm" class="sel">
+                                <select name="month" id="mm" class="sel">
                                     <option>월</option>
                                     <option value="01">1</option>
                                     <option value="02">2</option>
@@ -113,7 +113,7 @@
                     <!-- BIRTH_DD -->
                     <div id="bir_dd" name="birth">
                             <span class="box">
-                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                                <input name="day" type="text" id="dd" class="int" maxlength="2" placeholder="일">
                             </span>
                     </div>
 
