@@ -11,5 +11,5 @@ public interface PostService {
 
     PostVO getPost(PostVO vo);
 
-    List<PostVO> getPostList(PostVO vo);
+    List<PostVO> getPostList();
 }

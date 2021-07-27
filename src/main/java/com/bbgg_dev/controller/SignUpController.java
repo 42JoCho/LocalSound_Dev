@@ -20,10 +20,11 @@ public class SignUpController {
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
         String name = request.getParameter("name");
-        String birth = request.getParameter("birth");
+        String birth = request.getParameter("year")
+                + "-" + request.getParameter("month")
+                + "-" + request.getParameter("day");
         char gender = request.getParameter("gender").charAt(0);
         String email = request.getParameter("email");
-
 
 
         // 2. id 중복체크

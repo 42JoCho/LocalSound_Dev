@@ -40,6 +40,7 @@ public class PostDAO {
         mybatis.commit();
     }
 
+
     public PostVO getPost(PostVO vo) {
         return mybatis.selectOne("PostDAO.getPost", vo);
     }
@@ -48,7 +49,19 @@ public class PostDAO {
         return mybatis.selectList("PostDAO.getPostByAuthor", vo);
     }
 
-    public List<PostVO> getPostList(PostVO vo) {
-        return mybatis.selectList("PostDAO.getPostList", vo);
+    public List<PostVO> getPostByRecoCount() {
+        return mybatis.selectList("PostDAO.getPostByRecoCount");
+    }
+
+    public List<PostVO> getPostByViewCount() {
+        return mybatis.selectList("PostDAO.getPostByViewCount");
+    }
+
+    public List<PostVO> getPostList() {
+        return mybatis.selectList("PostDAO.getPostList");
+    }
+
+    public List<PostVO> searchPost(PostVO vo) {
+        return mybatis.selectList("PostDAO.searchPostList", vo);
     }
 }

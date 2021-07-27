@@ -17,11 +17,13 @@
     </update>
     <update id="updateViewCount">
         update ebdb.POST
-        set viewcount = viewcount + 1 where pid=#{postId}
+        set viewcount = viewcount + 1
+        where pid = #{postId}
     </update>
-    <update id="updateRecordCount">
+    <update id="updateRecoCount">
         update ebdb.POST
-        set
+        set RECO_COUNT = RECO_COUNT + 1
+        where pid = #{postId}
     </update>
     <delete id="deletePost">
         delete
@@ -30,25 +32,38 @@
     </delete>
     <resultMap id="postList" type="com.bbgg_dev.post.PostVO">
         <result property="postId" column="PID"/>
-        <result property="postTitle" column="TITLE" />
-        <result property="postAuthor" column="AUTHOR" />
-        <result property="postDate" column="PDATE" />
-        <result property="postViewCount" column="VIEWCOUNT" />
-        <result property="postText" column="PMAIN_TEXT" />
-        <result property="guName" column="GU_NAME" />
-        <result property="dongName" column="DONG_NAME" />
+        <result property="postTitle" column="TITLE"/>
+        <result property="postAuthor" column="AUTHOR"/>
+        <result property="postDate" column="PDATE"/>
+        <result property="postViewCount" column="VIEWCOUNT"/>
+        <result property="postRecoCount" column="RECO_COUNT"/>
+        <result property="postText" column="PMAIN_TEXT"/>
+        <result property="guName" column="GU_NAME"/>
+        <result property="dongName" column="DONG_NAME"/>
     </resultMap>
     <select id="getPost" resultType="post" resultMap="postList">
         select *
         from ebdb.POST
         where pid = #{postId}
     </select>
-    <select id="getPostList" resultType="post" resultMap="postList">
+    <select id="getPostList">
         select *
         from ebdb.POST
-        order by pid
+        order by pid desc
     </select>
-    <select id="getPostByAuthor" resultType="post" resultMap="postList">
-        select * from ebdb.POST where author like #{postAuthor};
+    <select id="getPostByAuthor" resultType="post">
+        select *
+        from ebdb.POST
+        where author like #{postAuthor};
+    </select>
+    <select id="getPostByRecoCount" resultType="post">
+        select *
+        from ebdb.POST
+        order by RECO_COUNT desc
+    </select>
+    <select id="getPostByViewCount" resultType="post">
+        select *
+        from ebdb.POST
+        order by VIEWCOUNT desc
     </select>
 </mapper>
