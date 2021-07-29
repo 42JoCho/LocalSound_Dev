@@ -252,21 +252,25 @@
 		</tr>
 	</div>
 	<div>
-		<form action="detail.jsp" method="post">
-				<textarea class="detailcomment" name="detailcomment"
+		<form action="insertComment.do" method="post">
+			<input name="pid"  value="${post.postId }"/>
+			<input name="cid"  value="${sessionId}"/>
+				<textarea class="detailcomment" name="cmtText"
 						  placeholder="댓글을 입력하세요" cols="40" rows="10"></textarea>
 			<button class="comment">등록</button>
 		</form>
 	</div>
 	<div>
 		<p class="commentcount">댓글1</p>
-		<p class="commentlist">
-			<span class="author">김성동</span><br>
-			<br>
-			테스트
-			<span><a class="comment" href="댓글삭제.do">삭제</a></span>
-			<span><a class="comment" href="댓글수정.do">수정</a></span>
-		</p>
+		<c:forEach items="${commentList }" var="post">
+			<tr>
+				<td>${post.commentId }</td>
+				<td>${post.commentAuthor }</td>
+				<td>${post.commentText }${post.commentDate }</td>
+				<td><a class="comment" href="deleteComment.do">삭제</a>
+					<a class="comment" href="updateComment.do">수정</a></td>
+			</tr>
+		</c:forEach>
 	</div>
 </div>
 </body>
