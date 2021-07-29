@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.post;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
@@ -12,12 +12,18 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-public class GetPostListByViewCountController {
+public class GetPostListByAuthorController {
 
-    @RequestMapping(value = "/getPostListByViewCount.do")
+    @RequestMapping(value = "/getPostListByAuthor.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response){
+
+        String author = request.getParameter("author");
+
+        PostVO vo = new PostVO();
+        vo.setPostAuthor(author);
+
         PostDAO postDAO = new PostDAO();
-        List<PostVO> postList = postDAO.getPostByViewCount();
+        List<PostVO> postList = postDAO.getPostByAuthor(vo);
 
         HttpSession session = request.getSession();
         session.setAttribute("postList", postList);

@@ -1,31 +1,17 @@
 package com.bbgg_dev.comment;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
-
-import java.util.List;
+import com.bbgg_dev.comment.Impl.CommentDAO;
 
 public class CommentServiceClient {
 
     public static void main(String[] args) {
-
-        AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
-        CommentService commentService = (CommentService) container.getBean("CommentService");
-
-        // 댓글 등록
         CommentVO vo = new CommentVO();
-        vo.setPostId(4);
-        vo.setCommentAuthor("user1");
-        vo.setCommentText("댓글 2");
-        vo.setCommentText("댓글 2의 내용입니다.");
+        CommentDAO commentDAO = new CommentDAO();
 
-
-        // 특정 글에 대한 댓글 목록
-        List<CommentVO> commentList = commentService.getCommentList(vo);
-        for (CommentVO comment : commentList)
-            System.out.println("---> " + comment.toString());
-
-        container.close();
+        vo.setPostId(1);
+        vo.setCommentAuthor("작성자 2");
+        vo.setCommentText("댓글 작성 테스트");
+        System.out.println(vo);
+        commentDAO.insertComment(vo);
     }
-
 }

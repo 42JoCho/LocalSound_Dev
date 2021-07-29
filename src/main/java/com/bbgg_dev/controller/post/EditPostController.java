@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.post;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;

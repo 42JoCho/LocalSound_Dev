@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.log_io;
 
 import com.bbgg_dev.login.Impl.LoginDAO;
 import com.bbgg_dev.login.LoginVO;
@@ -33,7 +33,7 @@ public class LoginController {
         HttpSession session = request.getSession();
         String loginSuccess = null;
         if (user != null) {
-            loginSuccess = user.getMemberName();
+            loginSuccess = user.getMemberId();
             session.setAttribute("sessionId", loginSuccess);
             mav.setViewName("redirect:getPostList.do");
         } else {
