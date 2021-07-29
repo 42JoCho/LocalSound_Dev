@@ -59,7 +59,7 @@
 <header>
 	<h1>
 
-		<a href="main.jsp">방방곡곡</a>
+		<a href="getPostList.do">방방곡곡</a>
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">
@@ -213,7 +213,8 @@
 
 		<tr>
 			<span class="like-content">
-				<form action="getPostListByRecoCount.do" method="post">
+				<form action="IncreaseRecoCount.do?pid=${post.postId }" method="post">
+					<input name="pid" type="hidden" value="${post.postId }"/>
 				<button class="btn-secondary like-review">
 					<i class="fa fa-heart" aria-hidden="true"></i>${post.postRecoCount }
 				</button>
@@ -262,14 +263,12 @@
 	</div>
 	<div>
 		<p class="commentcount">댓글</p>
-
 		<c:forEach items="${commentList }" var="comment">
-			<input name="cid" value="${comment.commentId }"/>
 			<p class="commentlist">
 			<td><p style="font-weight: bold;">${comment.commentAuthor }</p></td>
 			<td>${comment.commentText }</td>
 			<td>
-				<p id="cmtdel" class="comment">${comment.commentDate }
+				<p class="comment">${comment.commentDate }
 				<a href="deleteComment.do">삭제</a>
 				<a id="cmtup" class="comment" href="updateComment.do">수정</a></p>
 			</td>

@@ -55,7 +55,7 @@
 <body>
 	<header>
 		<h1>
-			<a href="main.jsp">방방곡곡</a>
+			<a href="getPostList.do">방방곡곡</a>
 		</h1>
 		<div class="search">
 			<input type="text" placeholder="검색어 입력">
@@ -229,7 +229,7 @@
         <th>번호</th>
         <th>지역명</th>
         <th>제목</th>
-			<th>추천수</th>
+		<th>추천수</th>
         <th>게시일</th>
         <th>조회수</th>
     </tr>
