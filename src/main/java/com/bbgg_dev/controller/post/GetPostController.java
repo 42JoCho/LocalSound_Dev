@@ -36,7 +36,8 @@ public class GetPostController {
 
         PostDAO postDAO = new PostDAO();
         PostVO post = postDAO.getPost(vo);
-        commentVO.setPostId(Integer.parseInt((String) session.getAttribute("pid")));
+        int postId = post.getPostId();
+        commentVO.setPostId(postId);
         List<CommentVO> commentList = commentDAO.getCommentList(commentVO);
 
         // 3. 결과를 세션에 저장하고 상세 화면 리턴
