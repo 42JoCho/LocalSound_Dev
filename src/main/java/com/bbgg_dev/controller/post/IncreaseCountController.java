@@ -37,7 +37,6 @@ public class IncreaseCountController {
 
         int pid = Integer.parseInt(request.getParameter("pid"));
         vo.setPostId(pid);
-        postDAO.updateViewCount(vo);
         postDAO.updateRecoCount(vo);
         return getPostComment(vo, postDAO, commentDAO, commentVO);
     }

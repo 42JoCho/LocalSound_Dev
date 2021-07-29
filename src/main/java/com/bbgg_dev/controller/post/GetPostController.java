@@ -38,6 +38,7 @@ public class GetPostController {
         CommentVO commentVO = new CommentVO();
 
         PostDAO postDAO = new PostDAO();
+        postDAO.updateViewCount(vo);
         PostVO post = postDAO.getPost(vo);
         int postId = post.getPostId();
         commentVO.setPostId(postId);
