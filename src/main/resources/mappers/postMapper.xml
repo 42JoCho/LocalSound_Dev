@@ -77,6 +77,9 @@
         FROM ebdb.POST
         WHERE PMAIN_TEXT LIKE #{searchKeyword}
         OR TITLE LIKE #{searchKeyword}
+        OR GU_NAME LIKE #{searchKeyword}
+        OR DONG_NAME LIKE #{searchKeyword}
+        or AUTHOR LIKE #{searchKeyword}
         ORDER BY PID DESC
     </select>
 </mapper>
