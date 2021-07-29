@@ -48,6 +48,17 @@
 			height: 40px;
 			color:black;
 		}
+		.del1 {
+			margin-top: 5px;
+			float: right;
+			padding: 11.5px;
+			padding-right: 15.5px;
+			padding-left: 15.5px;
+			text-decoration: none;
+			font-size: 10pt;
+			background-color: rgb(255, 255, 255);
+			border: 0.5px solid rgb(200, 200, 200);
+		}
 	</style>
 	<script type="text/javascript" src="<%=ctx%>/SE2/js/HuskyEZCreator.js"
 			charset="utf-8"></script>
@@ -383,7 +394,7 @@
 							  style="width: 650px; height: 350px;">${post.postText }</textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="button" class="del" id="save" value="수정" /><a href="main.jsp">취소</a></td>
+				<td colspan="2"><a class="del1" href="main.jsp">취소</a><input type="button" class="del" id="save" value="수정" /></td>
 			</tr>
 		</table>
 	</div>

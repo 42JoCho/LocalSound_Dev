@@ -22,9 +22,10 @@ p.title {
 	height: 40px;
 	font-size: 25px;
 	width: 780px;
-	padding: 10px;
+	padding: 25px;
 	outline: none;
 	float: left;
+	margin:0px;
 }
 /*목록 수정 삭제 */
 button.next {
@@ -39,9 +40,10 @@ button.next {
 
 }
 div.pdate{
+	text-align: right;
 	border-bottom: 1px solid ;
 	border-color: rgb(200,200,200);
-	padding:30px;
+	padding:20px;
 }
 /*글 작성*/
 div.detailcontent {
@@ -95,7 +97,7 @@ span.author{
 .like-content .btn-secondary {
 	margin:5px;
 	height:30px;
-	width:100px;
+	width:80px;
 	float: left;
 	display: block;
 	text-align: center;

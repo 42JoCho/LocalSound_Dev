@@ -11,8 +11,6 @@
 		  href=" ${pageContext.request.contextPath}/css/detailUI.css">
 	<link rel="stylesheet"
 		  href=" ${pageContext.request.contextPath}/css/menu.css">
-	<link rel="stylesheet"
-		  href=" ${pageContext.request.contextPath}/css/likebutton.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" />
 	<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -50,7 +48,7 @@
 		}
 		$(function(){
 			$(document).one('click', '.like-review', function(e) {
-				$(this).html('<i class="fa fa-heart" aria-hidden="true"></i> 눌러짐');
+				$(this).html('<i class="fa fa-heart" aria-hidden="true"></i>${post.postRecoCount }');
 				$(this).children('.fa-heart').addClass('animate-like');
 			});
 		});
@@ -215,9 +213,11 @@
 
 		<tr>
 			<span class="like-content">
+				<form action="getPostListByRecoCount.do" method="post">
 				<button class="btn-secondary like-review">
-					<i class="fa fa-heart" aria-hidden="true"></i>좋아요
+					<i class="fa fa-heart" aria-hidden="true"></i>${post.postRecoCount }
 				</button>
+				</form>
 			</span>
 
 

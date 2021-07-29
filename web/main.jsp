@@ -59,7 +59,7 @@
     </h1>
     <form class="search" method="post" action="searchPost.do">
 
-        <input type="text" placeholder="검색어 입력">
+        <input type="text" name="mainText" placeholder="검색어 입력">
         <button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
 
     </form>
