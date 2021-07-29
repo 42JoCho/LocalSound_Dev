@@ -23,14 +23,16 @@ public class GetPostController {
         // 1. 상세 조회할 게시글 번호 추출
         System.out.println("글 상세 조회 처리");
         String pid = request.getParameter("pid");
-
+        HttpSession session = request.getSession();
         // 2. DB 연동 처리
         PostVO vo = new PostVO();
-        vo.setPostId(Integer.parseInt(pid));
 
-        HttpSession session = request.getSession();
-        session.setAttribute("pid", vo.getPostId());
-
+        if(session.getAttribute("pid")==null){
+            vo.setPostId(Integer.parseInt(pid));
+            session.setAttribute("pid", Integer.parseInt(pid));
+        }else{
+            vo.setPostId((int) session.getAttribute("pid"));
+        }
         CommentDAO commentDAO = new CommentDAO();
         CommentVO commentVO = new CommentVO();
 

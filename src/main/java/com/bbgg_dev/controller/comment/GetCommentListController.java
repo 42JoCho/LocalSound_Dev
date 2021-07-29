@@ -20,13 +20,13 @@ public class GetCommentListController {
         ModelAndView mav = new ModelAndView();
         CommentVO vo = new CommentVO();
         CommentDAO commentDAO = new CommentDAO();
-
-        int postId = Integer.parseInt(request.getParameter("pid"));
+        HttpSession session = request.getSession();
+        System.out.println("getcommentList pid : "+session.getAttribute("pid"));
+        int postId = (int) session.getAttribute("pid");
         vo.setPostId(postId);
 
         List<CommentVO> commentList = commentDAO.getCommentList(vo);
 
-        HttpSession session = request.getSession();
         session.setAttribute("commentList", commentList);
 
         mav.addObject("commentList", commentList);
