@@ -66,4 +66,10 @@
         from ebdb.POST
         order by VIEWCOUNT desc
     </select>
+    <select id="getPostByGuName" resultType="post" resultMap="postList">
+        select *
+        from ebdb.POST
+        where GU_NAME = #{guName}
+        order by pid desc
+    </select>
 </mapper>
