@@ -41,6 +41,7 @@ public class GetPostController {
         PostVO post = postDAO.getPost(vo);
         int postId = post.getPostId();
         commentVO.setPostId(postId);
+        System.out.println(post);
         List<CommentVO> commentList = commentDAO.getCommentList(commentVO);
 
         // 3. 결과를 세션에 저장하고 상세 화면 리턴
