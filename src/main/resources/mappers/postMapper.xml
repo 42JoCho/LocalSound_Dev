@@ -66,17 +66,18 @@
         from ebdb.POST
         order by VIEWCOUNT desc
     </select>
-    <select id="getPostByGuName" resultType="post" resultMap="postList">
+    <select id="getPostByLocation" resultType="post" resultMap="postList">
         select *
         from ebdb.POST
         where GU_NAME = #{guName}
+          and DONG_NAME = #{dongName}
         order by pid desc
     </select>
     <select id="getSearchPostList" resultType="post" resultMap="postList">
         SELECT *
         FROM ebdb.POST
         WHERE PMAIN_TEXT LIKE #{searchKeyword}
-        OR TITLE LIKE #{searchKeyword}
+           OR TITLE LIKE #{searchKeyword}
         ORDER BY PID DESC
     </select>
 </mapper>
