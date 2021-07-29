@@ -30,15 +30,33 @@ td:nth-child(2) {
     width: 200px;
 }
 th:nth-child(3) {
-    width: 460px;
+    width: 400px;
 }
 td:nth-child(3) {
     text-align: left;
-    width: 460px;
+    width: 400px;
 }
 th:nth-child(4) {
-    width: 80px;
+    width: 70px;
 }
 th:nth-child(4) {
-    width: 80px;
+    width: 70px;
+}
+th:nth-child(5) {
+    width: 70px;
+}
+th:nth-child(5) {
+    width: 70px;
+}
+th:nth-child(6) {
+    width: 100px;
+}
+th:nth-child(6) {
+    width: 100px;
+}
+th:nth-child(7) {
+    width: 70px;
+}
+th:nth-child(7) {
+    width: 70px;
 }

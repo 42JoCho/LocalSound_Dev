@@ -195,43 +195,32 @@
         <p class = "information">회원정보</p>
         <table class="membership" cellpadding="18" cellspacing="0">
 		<thead>
-            <thead>
             <tr>
               <td>아이디</td>
-              <td><input class="text1" type="text" name="id" value="${loginUser.id }" readonly="readonly"></td>
+              <td><input class="text1" type="text" name="id" value="${member.memberId }" readonly="readonly"></td>
             </tr>
+
             <tr>
               <td>비밀번호</td>
-              <td><input class="text1" type="password" name="pass"></td>
+              <td><input class="text1" type="password" name="pass" value="${member.memberPassword }"></td>
             </tr>
             <tr>
               <td>이름</td>
-              <td><input class="text1" type="text" name="name" value="${loginUser.name }"></td>
+              <td><input class="text1" type="text" name="name" value="${lmember.memberName }"></td>
             </tr>
             <tr>
               <td>이메일</td>
-              <td><input class="text3" type="text" name="e-mail" value="${loginUser.email }">
+              <td><input class="text3" type="text" name="e-mail" value="${member.memeberEmail }">
             </tr>
             <tr>
               <td>성별</td>
-              <td><select name="gender">
-                  <c:choose>
-                    <c:when test="${loginUser.gender == 1}">
-                      <option value="1" selected="selected">Male</option>
-                      <option value="2">Female</option>
-                    </c:when>
-                    <c:otherwise>
-                      <option value="1">Male</option>
-                      <option value="2" selected="selected">Female</option>
-                    </c:otherwise>
-                  </c:choose>
-              </select></td>
+              <td><select name="gender" type="text" name="e-mail" value="${member.memberGender }"></td>
             </tr>
             <tralign="center">
             <td colspan="2"><input class="submit" type="submit" value="수정"> &nbsp; <input class="submit" type="submit" value="취소"></td></tr>
             </tbody>
+			</thead>
           </table>
-          </thead>
     </div>
     <div class="rayout2" nowrap>
             <p class = "information2">내 글</p>
@@ -241,62 +230,24 @@
         <th>번호</th>
         <th>지역명</th>
         <th>제목</th>
+			<th>추천수</th>
         <th>게시일</th>
         <th>조회수</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-    <tr>
-        <td>1</td>
-        <td>달성군 유가읍</td>
-        <td>집이 너무 멀어요</td>
-        <td>2021-07-02</td>
-        <td>12</td>
-    <tr>
-
-          </thead>
+	<c:forEach items="${postList }" var="post">
+		<tr>
+			<td>${post.postId }</td>
+			<td>${post.guName } ${post.dongName }</td>
+			<td>${post.postTitle }</td>
+			<td>${post.postRecoCount }</td>
+			<td>${post.postDate }</td>
+			<td>${post.postViewCount }</td>
+		</tr>
+	</c:forEach>
+	</tbody>
+		</table>
     </div>
 	
 </body>

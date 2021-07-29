@@ -73,7 +73,7 @@
                 var str = document.getElementById("login");
                 str.innerHTML = '<a style="color: teal;text-decoration: none;" href="logout.do">로그아웃</a>';
                 var str = document.getElementById("regist");
-                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="Information.jsp">내 정보</a>';
+                str.innerHTML = '<a style="color: teal;text-decoration: none;" href="memberPage.do">내 정보</a>';
             }
         </script>
     </p>
@@ -196,12 +196,13 @@
         <thead>
         <img src="${pageContext.request.contextPath}/image/deagu.png" alt="daegu logo">
         <tr>
-            <th>번호</th>
+            <th><a href="getPostList.do">번호</a></th>
             <th>지역명</th>
             <th>제목</th>
-            <th>작성자</th>
+            <th><a href="getPostListByRecoCount.do">추천수</a></th>
+            <th><a href="getPostListByAuthor.do">작성자</a></th>
             <th>게시일</th>
-            <th>조회수</th>
+            <th><a href="getPostListByViewCount.do">조회수</a></th>
         </tr>
         </thead>
         <tbody>
@@ -210,6 +211,7 @@
                 <td>${post.postId }</td>
                 <td>${post.guName } ${post.dongName }</td>
                 <td><a href="getPost.do?pid=${post.postId }">${post.postTitle }</a></td>
+                <td>${post.postRecoCount }</td>
                 <td>${post.postAuthor }</td>
                 <td>${post.postDate }</td>
                 <td>${post.postViewCount }</td>
