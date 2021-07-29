@@ -65,7 +65,7 @@ public class PostDAO {
         return mybatis.selectList("PostDAO.getPostList");
     }
 
-    public List<PostVO> searchPost(PostVO vo) {
-        return mybatis.selectList("PostDAO.searchPostList", vo);
+    public List<PostVO> getSearchPostList(PostVO vo) {
+        return mybatis.selectList("PostDAO.getSearchPostList", vo);
     }
 }

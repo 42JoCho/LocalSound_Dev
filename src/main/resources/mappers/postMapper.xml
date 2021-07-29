@@ -72,4 +72,11 @@
         where GU_NAME = #{guName}
         order by pid desc
     </select>
+    <select id="getSearchPostList" resultType="post" resultMap="postList">
+        SELECT *
+        FROM ebdb.POST
+        WHERE PMAIN_TEXT LIKE #{searchKeyword}
+        OR TITLE LIKE #{searchKeyword}
+        ORDER BY PID DESC
+    </select>
 </mapper>

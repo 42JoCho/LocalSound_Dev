@@ -21,12 +21,17 @@ public class SearchPostController {
         // 1. 사용자 입력 정보 추출 (검색기능 구현할것)
         String maintext = request.getParameter("mainText");
 
+        // null값 체크
+        if (maintext == null || maintext.equals("")){
+            maintext = "%";
+        }
+
         // 2. DB 연동 처리
         PostVO vo = new PostVO();
         vo.setSearchKeyword(maintext);
 
         PostDAO postDAO = new PostDAO();
-        List<PostVO> postList = postDAO.searchPost(vo);
+        List<PostVO> postList = postDAO.getSearchPostList(vo);
 
         // 3. 검색 결과를 세션에 저장하고 목록 화면 리턴
         HttpSession session = request.getSession();
