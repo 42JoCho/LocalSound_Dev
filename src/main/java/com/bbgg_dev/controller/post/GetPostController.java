@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Objects;
 
 
 @Controller
@@ -27,7 +28,7 @@ public class GetPostController {
         // 2. DB 연동 처리
         PostVO vo = new PostVO();
 
-        if(session.getAttribute("pid")==null){
+        if(!Objects.equals(session.getAttribute("pid"), pid)){
             vo.setPostId(Integer.parseInt(pid));
             session.setAttribute("pid", Integer.parseInt(pid));
         }else{
