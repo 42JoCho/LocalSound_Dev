@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.post;
 
 import com.bbgg_dev.post.Impl.PostDAO;
 import com.bbgg_dev.post.PostVO;
@@ -12,23 +12,30 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-public class DeletePostController {
+public class GetPostController {
 
-    @RequestMapping(value = "/deletePost.do")
+    @RequestMapping(value = "/getPost.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("글 삭제 처리");
 
+        // 1. 상세 조회할 게시글 번호 추출
+        System.out.println("글 상세 조회 처리");
         String pid = request.getParameter("pid");
 
-
+        // 2. DB 연동 처리
         PostVO vo = new PostVO();
         vo.setPostId(Integer.parseInt(pid));
 
-        PostDAO postDAO = new PostDAO();
-        postDAO.deletePost(vo);
+        HttpSession session = request.getSession();
+        session.setAttribute("pid", vo.getPostId());
 
+        PostDAO postDAO = new PostDAO();
+        PostVO post = postDAO.getPost(vo);
+
+        // 3. 결과를 세션에 저장하고 상세 화면 리턴
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("redirect:getPostList.do");
+        mav.addObject("post", post);
+        mav.setViewName("/detail.jsp");
+        //
         return mav;
     }
 }

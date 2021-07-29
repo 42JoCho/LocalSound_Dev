@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.log_io;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

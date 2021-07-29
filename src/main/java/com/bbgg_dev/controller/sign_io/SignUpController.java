@@ -1,4 +1,4 @@
-package com.bbgg_dev.controller;
+package com.bbgg_dev.controller.sign_io;
 
 import com.bbgg_dev.sign_up.Impl.SignUpDAO;
 import com.bbgg_dev.sign_up.SignUpVO;
@@ -30,12 +30,11 @@ public class SignUpController {
         // 2. id 중복체크
         SignUpDAO signUpDAO = new SignUpDAO();
         SignUpVO vo = new SignUpVO();
-        System.out.println(vo);
         vo.setId(id);
         SignUpVO user = signUpDAO.idCheck(vo);
         ModelAndView mav = new ModelAndView();
         HttpSession session = request.getSession();
-        String signUpSuccess = null;
+        String signUpSuccess;
         // 3. id 중복여부에 따라서 회원가입 결정
         if (user != null) {
             session.setAttribute("sessionId", null);
@@ -49,7 +48,7 @@ public class SignUpController {
             vo.setBirth(java.sql.Date.valueOf(birth));
             vo.setEmail(email);
             signUpDAO.insertMember(vo);
-            signUpSuccess = vo.getName();
+            signUpSuccess = vo.getId();
             session.setAttribute("sessionId", signUpSuccess);
             System.out.println("회원가입 성공!");
             mav.setViewName("/login.jsp");

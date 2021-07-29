@@ -17,4 +17,8 @@ public class LoginDAO {
     public LoginVO checkUser(LoginVO vo) {
         return mybatis.selectOne("LoginDAO.checkUser", vo);
     }
+
+    public LoginVO getUserInfo(LoginVO vo) {
+        return mybatis.selectOne("LoginDAO.getUserInfo", vo);
+    }
 }

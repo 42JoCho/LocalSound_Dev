@@ -10,9 +10,6 @@ public interface CommentService {
 
     void updateComment(CommentVO vo);
 
-    CommentVO getComment(CommentVO vo);
-
     List<CommentVO> getCommentList(CommentVO vo);
-
 
 }
