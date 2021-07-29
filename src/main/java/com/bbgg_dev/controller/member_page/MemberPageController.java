@@ -25,9 +25,10 @@ public class MemberPageController {
         PostDAO postDAO = new PostDAO();
         HttpSession session = request.getSession();
         String memberId = (String) session.getAttribute("sessionId");
+        System.out.println(memberId);
         loginVO.setMemberId(memberId);
         LoginVO userInfo = loginDAO.getUserInfo(loginVO);
-
+        System.out.println(userInfo);
         postVO.setPostAuthor(memberId);
         List<PostVO> postList = postDAO.getPostByAuthor(postVO);
 

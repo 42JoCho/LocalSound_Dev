@@ -21,10 +21,9 @@ public class LoginController {
         String pw = request.getParameter("pw");
 
         LoginVO vo = new LoginVO();
-        System.out.println(vo);
         vo.setMemberId(id);
         vo.setMemberPassword(pw);
-
+        System.out.println(vo);
         LoginDAO loginDAO = new LoginDAO();
         LoginVO user = loginDAO.checkUser(vo);
 

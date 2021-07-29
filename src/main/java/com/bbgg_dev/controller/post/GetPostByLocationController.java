@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class GetPostByGuNameController {
+public class GetPostByLocationController {
     @RequestMapping(value = "/getPostByGuName.do")
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response){
 
         String guName = request.getParameter("guName");
-
+        String dongName = request.getParameter("dongName");
         PostVO vo = new PostVO();
         vo.setGuName(guName);
-
+        vo.setDongName(dongName);
         PostDAO postDAO = new PostDAO();
-        List<PostVO> postList = postDAO.getPostByGuName(vo);
+        List<PostVO> postList = postDAO.getPostByLocation(vo);
 
         HttpSession session = request.getSession();
         session.setAttribute("postList", postList);

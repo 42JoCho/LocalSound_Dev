@@ -118,7 +118,7 @@
 		<ul>
 			<li><a href="login.jsp">로그인</a></li>
 			<li><a href="regist.jsp">회원가입</a></li>
-			<li><a href="main.jsp">구경하기</a></li>
+			<li><a href="lookUpPostList.do">구경하기</a></li>
 		</ul>
 	</div>
 	<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg"

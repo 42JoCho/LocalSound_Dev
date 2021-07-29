@@ -200,7 +200,7 @@
 
 <header>
 	<h1>
-		<a href="main.jsp">방방곡곡</a>
+		<a href="getPostList.do">방방곡곡</a>
 	</h1>
 	<div class="search">
 		<input type="text" placeholder="검색어 입력">

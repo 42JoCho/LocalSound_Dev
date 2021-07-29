@@ -19,10 +19,8 @@ public class DeleteCommentController {
         CommentVO vo = new CommentVO();
         CommentDAO commentDAO = new CommentDAO();
 
-        int commentId = Integer.parseInt(request.getParameter("cid"));
-
-        vo.setCommentId(commentId);
-
+        System.out.println(request.getParameter("cid"));
+        vo.setCommentId(Integer.parseInt(request.getParameter("cid")));
         commentDAO.deleteComment(vo);
 
         mav.setViewName("redirect:getCommentList.do");
@@ -30,3 +28,5 @@ public class DeleteCommentController {
         return mav;
     }
 }
+// 1. 동 별로 게시글 필터링
+// 2.
