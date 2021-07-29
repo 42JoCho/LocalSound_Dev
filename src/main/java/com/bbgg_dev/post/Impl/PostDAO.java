@@ -57,6 +57,10 @@ public class PostDAO {
         return mybatis.selectList("PostDAO.getPostByViewCount");
     }
 
+    public List<PostVO> getPostByGuName(PostVO vo) {
+        return mybatis.selectList("PostDAO.getPostByGuName", vo);
+    }
+
     public List<PostVO> getPostList() {
         return mybatis.selectList("PostDAO.getPostList");
     }
