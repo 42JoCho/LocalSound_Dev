@@ -193,34 +193,33 @@
 	</script>
 	<div class="rayout1">
         <p class = "information">회원정보</p>
+		<c:set var = "login" value = '${userInfo }'/>
         <table class="membership" cellpadding="18" cellspacing="0">
 		<thead>
             <tr>
               <td>아이디</td>
-              <td><input class="text1" type="text" name="id" value="${member.memberId }" readonly="readonly"></td>
+              <td>${sessionId}</td>
             </tr>
 
             <tr>
               <td>비밀번호</td>
-              <td><input class="text1" type="password" name="pass" value="${member.memberPassword }"></td>
+              <td>${login.memberPassword }</td>
             </tr>
             <tr>
               <td>이름</td>
-              <td><input class="text1" type="text" name="name" value="${lmember.memberName }"></td>
+              <td>${login.memberName }</td>
             </tr>
             <tr>
               <td>이메일</td>
-              <td><input class="text3" type="text" name="e-mail" value="${member.memeberEmail }">
+				<td>${login.memeberEmail }</td>
             </tr>
             <tr>
               <td>성별</td>
-              <td><select name="gender" type="text" name="e-mail" value="${member.memberGender }"></td>
+              <td>${login.memberGender }</td>
             </tr>
-            <tralign="center">
-            <td colspan="2"><input class="submit" type="submit" value="수정"> &nbsp; <input class="submit" type="submit" value="취소"></td></tr>
-            </tbody>
 			</thead>
           </table>
+
     </div>
     <div class="rayout2" nowrap>
             <p class = "information2">내 글</p>
@@ -240,7 +239,7 @@
 		<tr>
 			<td>${post.postId }</td>
 			<td>${post.guName } ${post.dongName }</td>
-			<td>${post.postTitle }</td>
+			<td><a href="getPost.do?pid=${post.postId }">${post.postTitle }</a></td>
 			<td>${post.postRecoCount }</td>
 			<td>${post.postDate }</td>
 			<td>${post.postViewCount }</td>
