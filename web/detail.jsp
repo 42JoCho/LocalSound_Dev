@@ -262,8 +262,9 @@
 	</div>
 	<div>
 		<p class="commentcount">댓글</p>
+
 		<c:forEach items="${commentList }" var="comment">
-			<input name="pid" type="hidden" value="${comment.commentId }"/>
+			<input name="cid" value="${comment.commentId }"/>
 			<p class="commentlist">
 			<td><p style="font-weight: bold;">${comment.commentAuthor }</p></td>
 			<td>${comment.commentText }</td>
@@ -273,14 +274,6 @@
 				<a id="cmtup" class="comment" href="updateComment.do">수정</a></p>
 			</td>
 			</p>
-			<script>
-				var id = '${sessionId}'
-				if (id == '${comment.commentAuthor }') {
-				}else{
-					var str = document.getElementById("cmtdel");
-					str.innerHTML = '<p style="display:none"></p>';
-				}
-			</script>
 		</c:forEach>
 
 	</div>
