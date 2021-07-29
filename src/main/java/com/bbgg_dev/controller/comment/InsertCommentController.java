@@ -29,7 +29,7 @@ public class InsertCommentController {
 
         commentDAO.insertComment(vo);
 
-        mav.setViewName("redirect:getCommentList.do");
+        mav.setViewName("/getPost.do");
         return mav;
     }
 }

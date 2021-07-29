@@ -253,24 +253,36 @@
 	</div>
 	<div>
 		<form action="insertComment.do" method="post">
-			<input name="pid"  value="${post.postId }"/>
-			<input name="cid"  value="${sessionId}"/>
+			<input name="pid" type="hidden" value="${post.postId }"/>
+			<input name="cid" type="hidden" value="${sessionId}"/>
 				<textarea class="detailcomment" name="cmtText"
 						  placeholder="댓글을 입력하세요" cols="40" rows="10"></textarea>
 			<button class="comment">등록</button>
 		</form>
 	</div>
 	<div>
-		<p class="commentcount">댓글1</p>
-		<c:forEach items="${commentList }" var="post">
-			<tr>
-				<td>${post.commentId }</td>
-				<td>${post.commentAuthor }</td>
-				<td>${post.commentText }${post.commentDate }</td>
-				<td><a class="comment" href="deleteComment.do">삭제</a>
-					<a class="comment" href="updateComment.do">수정</a></td>
-			</tr>
+		<p class="commentcount">댓글</p>
+		<c:forEach items="${commentList }" var="comment">
+			<input name="pid" type="hidden" value="${comment.commentId }"/>
+			<p class="commentlist">
+			<td><p style="font-weight: bold;">${comment.commentAuthor }</p></td>
+			<td>${comment.commentText }</td>
+			<td>
+				<p id="cmtdel" class="comment">${comment.commentDate }
+				<a href="deleteComment.do">삭제</a>
+				<a id="cmtup" class="comment" href="updateComment.do">수정</a></p>
+			</td>
+			</p>
+			<script>
+				var id = '${sessionId}'
+				if (id == '${comment.commentAuthor }') {
+				}else{
+					var str = document.getElementById("cmtdel");
+					str.innerHTML = '<p style="display:none"></p>';
+				}
+			</script>
 		</c:forEach>
+
 	</div>
 </div>
 </body>
