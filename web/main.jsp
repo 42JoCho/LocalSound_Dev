@@ -49,19 +49,13 @@
     </script>
 </head>
 <body>
-<%
-    String id_str = session.getId();
-%>
 <header>
-
     <h1>
-        <a href="main.jsp">방방곡곡</a>
+        <a href="getPostList.do">방방곡곡</a>
     </h1>
     <form class="search" method="post" action="searchPost.do">
-
         <input type="text" name="mainText" placeholder="검색어 입력">
         <button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
-
     </form>
     <p class="login">
         <a id="login" href="login.jsp">로그인</a> /
@@ -81,7 +75,7 @@
 <nav>
     <div class="dropmenu">
     <ul id="main_menu">
-        <li><a href="main_east.jsp">동구</a>
+        <li><a name="mainText" href="searchPost.do" value="동구">동구</a>
             <ul id="sub_menu">
                 <li><a href="#home">신암동</a></li>
                 <li><a href="#home">신천동</a></li>
@@ -223,14 +217,6 @@
 <div style="position: relative">
     <p>
         <a class="newwrite" href="write.jsp">새 글</a>
-    </p>
-</div>
-<div class="row" style="background-color: #ccc;">
-    <p>
-        <a href="index.jsp">처음화면으로</a>
-        <a href="UpdatePost.jsp">수정</a>
-        <a href="login.jsp">로그인</a>
-        <a href="Information1.jsp">테스트</a>
     </p>
 </div>
 </body>

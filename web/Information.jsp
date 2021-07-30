@@ -57,10 +57,10 @@
 		<h1>
 			<a href="getPostList.do">방방곡곡</a>
 		</h1>
-		<div class="search">
-			<input type="text" placeholder="검색어 입력">
+		<form class="search" method="post" action="searchPost.do">
+			<input type="text" name="mainText" placeholder="검색어 입력">
 			<button style="font-size:1.5rem;" ><i class="fas fa-search"></i></button>
-		</div>
+		</form>
 
 		<p class="login">
 			<a id="login" href="login.jsp">로그인</a> /
