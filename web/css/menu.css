@@ -231,3 +231,11 @@ div.content>img {
 }
 .dropmenu ul ul{position: absolute; display: none;}
 .dropmenu ul li a:hover{box-shadow:1px 1px 20px #ddd;}
+
+button.gu{
+	width:100px;
+	background-color:white;
+	color:teal;
+	font-size:17pt;
+	font-weight:bold;
+}
