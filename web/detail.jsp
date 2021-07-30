@@ -48,7 +48,7 @@
 		}
 		$(function(){
 			$(document).one('click', '.like-review', function(e) {
-				$(this).html('<i class="fa fa-heart" aria-hidden="true"></i>${post.postRecoCount }');
+				$(this).html('<i class="fa fa-heart" aria-hidden="true"></i>완료');
 				$(this).children('.fa-heart').addClass('animate-like');
 			});
 		});
@@ -154,7 +154,7 @@
 				<form action="IncreaseRecoCount.do?pid=${post.postId }" method="post">
 					<input name="pid" type="hidden" value="${post.postId }"/>
 				<button class="btn-secondary like-review">
-					<i class="fa fa-heart" aria-hidden="true"></i>${post.postRecoCount }
+					<i class="fa fa-heart" aria-hidden="true"></i>추천
 				</button>
 				</form>
 			</span>
