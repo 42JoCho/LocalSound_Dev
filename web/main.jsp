@@ -81,37 +81,37 @@
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="북구">
             <button class="gu">북구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="서구">
             <button class="gu">서구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="중구">
             <button class="gu">중구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="남구">
             <button class="gu">남구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="수성구">
             <button class="gu">수성구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="달서구">
             <button class="gu">달서구</button>
         </form>
         </li>
         <li><form method="post" action="searchPost.do">
-            <input name="mainText" type="hidden" value="동구">
+            <input name="mainText" type="hidden" value="달성군">
             <button class="gu">달성군</button>
         </form>
         </li>
