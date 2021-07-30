@@ -266,8 +266,7 @@
 		<c:forEach items="${commentList }" var="comment">
 			<p class="commentlist">
 			<td><p style="font-weight: bold;">${comment.commentAuthor }</p></td>
-			<td>${comment.commentText }</td>
-			<td>
+			<td>${comment.commentText }
 				<p class="comment">${comment.commentDate }
 				<a href="deleteComment.do">삭제</a>
 				<a id="cmtup" class="comment" href="updateComment.do">수정</a></p>

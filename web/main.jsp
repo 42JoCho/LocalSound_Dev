@@ -196,13 +196,13 @@
         <thead>
         <img src="${pageContext.request.contextPath}/image/deagu.png" alt="daegu logo">
         <tr>
-            <th><a href="getPostList.do">번호</a></th>
+            <th>번호 <a calss href="getPostList.do"><i class="fas fa-angle-down"></i></a></th>
             <th>지역명</th>
             <th>제목</th>
-            <th><a href="getPostListByRecoCount.do">추천수</a></th>
-            <th><a href="getPostListByAuthor.do">작성자</a></th>
+            <th>추천수 <a href="getPostListByRecoCount.do"><i class="fas fa-angle-down"></i></a></th>
+            <th>작성자</th>
             <th>게시일</th>
-            <th><a href="getPostListByViewCount.do">조회수</a></th>
+            <th>조회수 <a href="getPostListByViewCount.do"><i class="fas fa-angle-down"></i></a></th>
         </tr>
         </thead>
         <tbody>
